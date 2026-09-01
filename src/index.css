@@ -1,0 +1,57 @@
+:root {
+  --bg: #fbf9f6;
+  --surface: #ffffff;
+  --border: #e5ded4;
+  --text: #221f1c;
+  --muted: #6d6459;
+  --accent: #a8431f;
+  --accent-soft: #f6e7e0;
+  --danger: #9b2226;
+  --radius: 10px;
+  --shadow: 0 1px 2px rgb(34 31 28 / 6%), 0 4px 12px rgb(34 31 28 / 4%);
+
+  color-scheme: light dark;
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17151300;
+    --bg: #171513;
+    --surface: #211e1b;
+    --border: #35302a;
+    --text: #f2ede6;
+    --muted: #a89e92;
+    --accent: #e8845c;
+    --accent-soft: #33241d;
+    --danger: #e57076;
+    --shadow: 0 1px 2px rgb(0 0 0 / 30%), 0 4px 12px rgb(0 0 0 / 20%);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+h1,
+h2 {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
