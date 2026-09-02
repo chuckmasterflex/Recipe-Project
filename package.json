@@ -1,7 +1,7 @@
 {
-  "name": "recipe-project",
+  "name": "recipe-hub",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -26,5 +26,5 @@
     "vite": "^8.2.2",
     "vitest": "^4.1.11"
   },
-  "description": "A browsable recipe box: search, scale servings, and keep your own recipes."
+  "description": "68 recipes across 9 categories, plus 6 standalone deep-dive guides. Static site, deploys to GitHub Pages."
 }

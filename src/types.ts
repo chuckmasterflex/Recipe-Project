@@ -1,28 +1,39 @@
-/** A single ingredient line. `quantity` is null for things like "salt, to taste". */
-export interface Ingredient {
-  /** Amount in `unit`s, for one batch at the recipe's base `servings`. */
-  quantity: number | null
-  /** "g", "cup", "tbsp", "clove" — empty string for countable items. */
-  unit: string
-  /** "yellow onion, finely diced" */
-  item: string
+export interface Category {
+  /** Display label. */
+  n: string
+  /** Accent hex, used as the card's left border and other accent touches. */
+  c: string
+}
+
+export interface Guide {
+  t: string
+  d: string
+  /** Filename in /public — must exist there. */
+  f: string
+  /** Single-letter icon shown on the guide tile. */
+  i: string
+  c: string
 }
 
 export interface Recipe {
-  id: string
-  title: string
-  description: string
-  /** The yield these ingredient quantities are written for. */
-  servings: number
-  prepMinutes: number
-  cookMinutes: number
-  tags: string[]
-  ingredients: Ingredient[]
-  /** Ordered instructions, one step per entry. */
-  steps: string[]
-  /** ISO timestamp, used for "newest first" ordering. */
-  updatedAt: string
+  /** Also used as the React key — must be unique across all recipes. */
+  n: string
+  /** Must be a key in RecipeData['categories']. */
+  c: string
+  /** Optional badges, 2-4 max. */
+  t?: string[]
+  /** Ingredients. Mutually exclusive with `f`. A line ending in ':' renders as a section header. */
+  i?: string[]
+  /** Method steps, auto-numbered. Mutually exclusive with `f`. */
+  m?: string[]
+  /** One-line formula, instead of i/m — used by the aiolis. Never set alongside i or m. */
+  f?: string
+  /** Notes, caveats, sourcing. */
+  nt?: string
 }
 
-/** The shape the recipe form works with before an id/timestamp is assigned. */
-export type RecipeDraft = Omit<Recipe, 'id' | 'updatedAt'>
+export interface RecipeData {
+  categories: Record<string, Category>
+  guides: Guide[]
+  recipes: Recipe[]
+}

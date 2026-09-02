@@ -1,120 +1,159 @@
 import { useMemo, useState } from 'react'
-import type { Recipe, RecipeDraft } from './types'
-import { useRecipes } from './hooks/useRecipes'
-import { allTags, emptyFilters, filterRecipes, type Filters } from './lib/search'
-import { SearchBar } from './components/SearchBar'
-import { RecipeList } from './components/RecipeList'
-import { RecipeDetail } from './components/RecipeDetail'
-import { RecipeForm } from './components/RecipeForm'
-import './App.css'
+import rawData from './data/recipes.json'
+import RecipeCard from './components/RecipeCard'
+import type { Recipe, RecipeData } from './types'
+import './styles/tokens.css'
+import './styles/app.css'
 
-type View =
-  | { name: 'list' }
-  | { name: 'detail'; id: string }
-  | { name: 'new' }
-  | { name: 'edit'; id: string }
+const data = rawData as RecipeData
+const { recipes, categories, guides } = data
+const CAT_KEYS = Object.keys(categories)
+
+interface IndexedRecipe extends Recipe {
+  _hay: string
+}
+
+// Precompute lowercase haystacks once, not per keystroke.
+const INDEXED: IndexedRecipe[] = recipes.map((r) => ({
+  ...r,
+  _hay: [
+    r.n,
+    categories[r.c].n,
+    (r.t ?? []).join(' '),
+    (r.i ?? []).join(' '),
+    (r.m ?? []).join(' '),
+    r.f ?? '',
+    r.nt ?? '',
+  ]
+    .join(' ')
+    .toLowerCase(),
+}))
+
+// Group order follows the category order in recipes.json, alphabetical within.
+const ORDER = Object.fromEntries(CAT_KEYS.map((k, i) => [k, i]))
+const SORTED = [...INDEXED].sort((a, b) => ORDER[a.c] - ORDER[b.c] || a.n.localeCompare(b.n))
 
 export default function App() {
-  const { recipes, addRecipe, updateRecipe, deleteRecipe, restoreSeed } = useRecipes()
-  const [filters, setFilters] = useState<Filters>(emptyFilters)
-  const [view, setView] = useState<View>({ name: 'list' })
+  const [cat, setCat] = useState('all')
+  const [term, setTerm] = useState('')
 
-  const visible = useMemo(() => filterRecipes(recipes, filters), [recipes, filters])
-  const tags = useMemo(() => allTags(recipes), [recipes])
+  const hits = useMemo(() => {
+    const t = term.trim().toLowerCase()
+    return SORTED.filter((r) => (cat === 'all' || r.c === cat) && (!t || r._hay.includes(t)))
+  }, [cat, term])
 
-  // Read the recipe from state rather than holding a copy, so edits show up immediately.
-  const active =
-    view.name === 'detail' || view.name === 'edit'
-      ? recipes.find((recipe) => recipe.id === view.id)
-      : undefined
-
-  // A recipe that no longer exists falls back to the list instead of a blank screen.
-  const current: View =
-    (view.name === 'detail' || view.name === 'edit') && !active ? { name: 'list' } : view
-
-  function handleCreate(draft: RecipeDraft) {
-    const created = addRecipe(draft)
-    setView({ name: 'detail', id: created.id })
-  }
-
-  function handleUpdate(id: string, draft: RecipeDraft) {
-    updateRecipe(id, draft)
-    setView({ name: 'detail', id })
-  }
-
-  function handleDelete(id: string) {
-    deleteRecipe(id)
-    setView({ name: 'list' })
-  }
+  const counts = useMemo(() => {
+    const c: Record<string, number> = { all: recipes.length }
+    CAT_KEYS.forEach((k) => {
+      c[k] = recipes.filter((r) => r.c === k).length
+    })
+    return c
+  }, [])
 
   return (
-    <div className="app">
-      <header className="app-header">
-        <button type="button" className="wordmark" onClick={() => setView({ name: 'list' })}>
-          Recipe Box
-        </button>
-        {current.name === 'list' && (
-          <button
-            type="button"
-            className="button button-primary"
-            onClick={() => setView({ name: 'new' })}
-          >
-            Add recipe
-          </button>
-        )}
+    <div className="wrap">
+      <header>
+        <div className="eyebrow">Living Document · Master Index</div>
+        <h1 className="title">
+          The Recipe
+          <br />
+          Hub
+        </h1>
+        <p className="sub">
+          Everything in one place. Filter by type, search by ingredient or name, tap any recipe to
+          open it. Standalone deep-dive guides at the bottom.
+        </p>
+        <div className="stats">
+          <Stat
+            label="Recipes"
+            value={recipes.filter((r) => !['sauce', 'onepot'].includes(r.c)).length}
+          />
+          <Stat label="One-Pot" value={counts.onepot} />
+          <Stat label="Aiolis" value={counts.sauce} />
+          <Stat label="Guides" value={guides.length} />
+        </div>
       </header>
 
-      <main>
-        {current.name === 'list' && (
-          <>
-            <SearchBar
-              filters={filters}
-              tags={tags}
-              resultCount={visible.length}
-              onChange={setFilters}
-            />
-            <RecipeList
-              recipes={visible}
-              onSelect={(recipe: Recipe) => setView({ name: 'detail', id: recipe.id })}
-            />
-            {recipes.length === 0 && (
-              <p className="empty">
-                Your recipe box is empty.
-                <button type="button" className="link-button" onClick={restoreSeed}>
-                  Restore the starter recipes
-                </button>
-              </p>
-            )}
-          </>
-        )}
+      <input
+        className="search"
+        type="search"
+        value={term}
+        onChange={(e) => setTerm(e.target.value)}
+        placeholder="Search recipes, ingredients, methods…"
+      />
 
-        {current.name === 'detail' && active && (
-          <RecipeDetail
-            recipe={active}
-            onBack={() => setView({ name: 'list' })}
-            onEdit={(recipe) => setView({ name: 'edit', id: recipe.id })}
-            onDelete={handleDelete}
+      <div className="chips">
+        <Chip on={cat === 'all'} onClick={() => setCat('all')} label="All" n={counts.all} />
+        {CAT_KEYS.map((k) => (
+          <Chip
+            key={k}
+            on={cat === k}
+            onClick={() => setCat(k)}
+            label={categories[k].n}
+            n={counts[k]}
           />
-        )}
+        ))}
+      </div>
 
-        {current.name === 'new' && (
-          <RecipeForm onSave={handleCreate} onCancel={() => setView({ name: 'list' })} />
-        )}
+      <div className="rcount">
+        {hits.length === recipes.length
+          ? `${recipes.length} entries`
+          : `${hits.length} of ${recipes.length} entries`}
+      </div>
 
-        {current.name === 'edit' && active && (
-          <RecipeForm
-            recipe={active}
-            onSave={(draft) => handleUpdate(active.id, draft)}
-            onCancel={() => setView({ name: 'detail', id: active.id })}
-          />
+      <div>
+        {hits.length ? (
+          hits.map((r) => <RecipeCard key={r.n} recipe={r} category={categories[r.c]} />)
+        ) : (
+          <div className="empty">
+            Nothing matches that.
+            <br />
+            Try a different term or clear the filter.
+          </div>
         )}
-      </main>
+      </div>
 
-      <footer className="app-footer">
-        <span>
-          {recipes.length} {recipes.length === 1 ? 'recipe' : 'recipes'}, saved in this browser.
-        </span>
-      </footer>
+      <div className="section-label">Deep-Dive Guides</div>
+      {guides.map((g) => (
+        // Guides live in /public as standalone HTML — plain anchors, not routes.
+        // import.meta.env.BASE_URL keeps them correct under the GH Pages subpath.
+        <a key={g.f} className="guide" href={`${import.meta.env.BASE_URL}${g.f}`}>
+          <span className="guide__icon" style={{ background: g.c }}>
+            {g.i}
+          </span>
+          <span>
+            <span className="guide__title">{g.t}</span>
+            <span className="guide__desc">{g.d}</span>
+          </span>
+        </a>
+      ))}
     </div>
+  )
+}
+
+function Stat({ label, value }: { label: string; value: number }) {
+  return (
+    <div className="stat">
+      {label}
+      <b>{value}</b>
+    </div>
+  )
+}
+
+function Chip({
+  on,
+  onClick,
+  label,
+  n,
+}: {
+  on: boolean
+  onClick: () => void
+  label: string
+  n: number
+}) {
+  return (
+    <button className={`chip${on ? ' is-on' : ''}`} onClick={onClick}>
+      {label} <span className="chip__n">{n}</span>
+    </button>
   )
 }

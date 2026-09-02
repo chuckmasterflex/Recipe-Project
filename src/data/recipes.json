@@ -1,0 +1,1399 @@
+{
+  "categories": {
+    "breakfast": {
+      "n": "Breakfast",
+      "c": "#E0A33E"
+    },
+    "airfryer": {
+      "n": "Air Fryer",
+      "c": "#C8452F"
+    },
+    "onepot": {
+      "n": "One-Pot",
+      "c": "#7BA05B"
+    },
+    "bowls": {
+      "n": "Bowls & Mains",
+      "c": "#5B8CA9"
+    },
+    "snacks": {
+      "n": "Snacks & Bars",
+      "c": "#9B7BA5"
+    },
+    "sauce": {
+      "n": "Sauces & Aiolis",
+      "c": "#E0A33E"
+    },
+    "sweet": {
+      "n": "Sweets",
+      "c": "#C8452F"
+    },
+    "sides": {
+      "n": "Sides & Salads",
+      "c": "#7BA05B"
+    },
+    "microwave": {
+      "n": "Microwave / Anyday",
+      "c": "#6FA8A0"
+    }
+  },
+  "guides": [
+    {
+      "t": "Aioli Guide",
+      "d": "All 24 aiolis with Pantone-matched color swatches",
+      "f": "aioli-guide.html",
+      "i": "A",
+      "c": "#E0A33E"
+    },
+    {
+      "t": "The Five Mother Sauces",
+      "d": "Technique reference, derivatives, knife cuts at true scale, FCA video links",
+      "f": "mother-sauces-guide.html",
+      "i": "M",
+      "c": "#C6A15B"
+    },
+    {
+      "t": "The Old Rotation",
+      "d": "Nine Budget Bytes one-pot meals with shared-pantry analysis",
+      "f": "one-pot-guide.html",
+      "i": "O",
+      "c": "#7BA05B"
+    },
+    {
+      "t": "Korean Ground Beef Bowls",
+      "d": "Full smart card — pantry check, scaling table, your gochujang version",
+      "f": "korean-beef-bowls.html",
+      "i": "K",
+      "c": "#C8452F"
+    },
+    {
+      "t": "Schwan's-Style Goulash",
+      "d": "Copycat build with Aldi/Costco cost split and scaling",
+      "f": "schwans-goulash.html",
+      "i": "G",
+      "c": "#5B8CA9"
+    },
+    {
+      "t": "L.B.J.'s Chili",
+      "d": "Heritage card transcription, Zephyr Wright history, Instant Pot variant",
+      "f": "lbj-chili.html",
+      "i": "L",
+      "c": "#8C3A2B"
+    }
+  ],
+  "recipes": [
+    {
+      "n": "Classic Banana Milk Overnight Oats",
+      "c": "breakfast",
+      "t": [
+        "No-cook",
+        "6 hr rest"
+      ],
+      "i": [
+        "1 cup rolled oats",
+        "3/4–1 cup whole milk",
+        "1/2 banana, sliced",
+        "1 tbsp honey",
+        "Pinch of salt"
+      ],
+      "m": [
+        "Combine all ingredients in a jar.",
+        "Stir, seal, refrigerate 6+ hours or overnight."
+      ]
+    },
+    {
+      "n": "Mango Nectar Overnight Oats",
+      "c": "breakfast",
+      "t": [
+        "No-cook",
+        "6 hr rest"
+      ],
+      "i": [
+        "1 cup rolled oats",
+        "Mango nectar (in place of part of the milk)",
+        "Milk for remaining liquid",
+        "Honey to taste (optional)"
+      ],
+      "m": [
+        "Combine oats with mango nectar in a jar.",
+        "Mix milk and honey separately, pour over the oats, stir.",
+        "Seal and refrigerate 6+ hours."
+      ],
+      "nt": "Mango nectar is already sweet — taste before adding honey."
+    },
+    {
+      "n": "Peanut Butter Protein Overnight Oats",
+      "c": "breakfast",
+      "t": [
+        "No-cook",
+        "High protein"
+      ],
+      "i": [
+        "1 cup rolled oats",
+        "3/4 cup whole milk",
+        "2 tbsp peanut butter",
+        "1 tbsp honey",
+        "1 tbsp cocoa powder (optional)",
+        "Pinch of salt"
+      ],
+      "m": [
+        "Warm peanut butter slightly, then whisk with milk, honey, and cocoa.",
+        "Add oats and salt to a jar, pour liquid over, stir well.",
+        "Seal and refrigerate 6+ hours."
+      ],
+      "nt": "Unflavored creatine mixes into the milk without affecting taste — good pre-training breakfast."
+    },
+    {
+      "n": "5-Jar Weekly Batch Prep",
+      "c": "breakfast",
+      "t": [
+        "Meal prep",
+        "5 servings"
+      ],
+      "i": [
+        "5 cups rolled oats",
+        "5 cups whole milk",
+        "2.5 bananas, sliced",
+        "5 tbsp honey",
+        "1 tsp salt"
+      ],
+      "m": [
+        "Line up 5 wide-mouth pint mason jars (Ball 16oz recommended).",
+        "1 cup oats per jar.",
+        "Pinch of salt each, honey drizzled evenly across all.",
+        "1 cup milk per jar, stir well.",
+        "Top with banana slices, seal.",
+        "Refrigerate — ready after 6 hours, keeps 5 days."
+      ],
+      "nt": "Vary toppings jar to jar (banana on some, mango nectar swap on others) to avoid getting bored."
+    },
+    {
+      "n": "Marmalade & Raspberry Jam Overnight Oats",
+      "c": "breakfast",
+      "t": [
+        "No-cook"
+      ],
+      "i": [
+        "Standard overnight oats base (oats + milk)",
+        "Orange marmalade",
+        "Raspberry jam"
+      ],
+      "m": [
+        "Build the standard oats base.",
+        "Swirl both jams in separately rather than fully mixing, to keep distinct flavor pockets.",
+        "Skip added sweetener — the jams provide it.",
+        "Warm thick-cut marmalade slightly beforehand for easier swirling."
+      ],
+      "nt": "Higher-protein swaps: liquid whey drained from Greek yogurt works 1:1 for milk. Mass gainer can substitute part of the liquid — thickens it, so use a partial serving and keep enough total liquid to hydrate the oats."
+    },
+    {
+      "n": "Krusteaz Pancake Mix Waffles",
+      "c": "breakfast",
+      "t": [
+        "Waffle iron",
+        "Official ratio"
+      ],
+      "i": [
+        "2 cups Krusteaz complete buttermilk pancake mix",
+        "1½ cups cold water",
+        "1 egg",
+        "2 tbsp vegetable oil (or melted butter)"
+      ],
+      "m": [
+        "Whisk everything together until lumps are gone — don't overmix.",
+        "Pour onto a preheated, lightly greased waffle iron.",
+        "Cook until steaming stops or golden brown."
+      ],
+      "nt": "Official Krusteaz pancake-to-waffle conversion. Melted butter subs for oil and adds richness. Honey works in place of syrup."
+    },
+    {
+      "n": "Air Fryer Silicone Mold Eggs",
+      "c": "airfryer",
+      "t": [
+        "300°F",
+        "8 min",
+        "Baseline"
+      ],
+      "i": [
+        "1 egg per mold",
+        "Light oil or butter for greasing"
+      ],
+      "m": [
+        "Lightly grease the silicone mold.",
+        "Crack egg into mold, leaving headroom — egg expands as it cooks.",
+        "Air fry at 300°F for 8 minutes.",
+        "Let sit a few minutes before popping out."
+      ],
+      "nt": "Working baseline, not fully dialed in. Blue-green discoloration on the bottom is steam from the mold and normal. Gray-green interior means overheating — don't exceed 300°F."
+    },
+    {
+      "n": "Air Fryer Pork Filets",
+      "c": "airfryer",
+      "t": [
+        "400°F",
+        "12-15 min",
+        "145°F"
+      ],
+      "i": [
+        "Pork filets",
+        "Salt and pepper",
+        "Cooking oil"
+      ],
+      "m": [
+        "Pat pork dry, season with salt and pepper.",
+        "Lightly oil the sheet pan.",
+        "Optional: pan-sear first for a crust.",
+        "Air fry at 400°F for 12-15 min, flipping halfway, to 145°F internal.",
+        "Rest 3+ minutes before slicing."
+      ],
+      "nt": "Thickness matters — check temp around the 10-minute mark on thinner cuts."
+    },
+    {
+      "n": "Air Fryer Frozen Broccoli",
+      "c": "airfryer",
+      "t": [
+        "400°F",
+        "12-14 min",
+        "From frozen"
+      ],
+      "i": [
+        "3 cups frozen broccoli florets",
+        "1.5 tbsp olive oil",
+        "1/2 tsp salt"
+      ],
+      "m": [
+        "Preheat air fryer to 400°F, 3 minutes.",
+        "Toss broccoli straight from frozen (don't thaw) with olive oil and salt.",
+        "Air fry in a single layer at 400°F for 12-14 min, shaking halfway. Aim for char on the edges."
+      ],
+      "nt": "Don't overcrowd — overcrowding steams instead of crisps. Garlic powder is a good add. Current baseline is 13 min at 400°F; 410°F is the next experiment for more char."
+    },
+    {
+      "n": "Air Fryer Roasted Potato Cubes with Broccoli",
+      "c": "airfryer",
+      "t": [
+        "400°F",
+        "20-22 min",
+        "Two-stage"
+      ],
+      "i": [
+        "Russet potatoes, ~1-inch cubes, skin on",
+        "3 cups frozen broccoli florets",
+        "Olive oil or melted butter",
+        "Salt, pepper, garlic powder"
+      ],
+      "m": [
+        "Preheat air fryer 400°F, 3-5 minutes.",
+        "Toss potato cubes with oil and seasoning, single layer on the sheet pan.",
+        "Air fry at 400°F for 10 minutes.",
+        "Flip potatoes, add frozen broccoli straight from frozen, tossed lightly with oil and salt.",
+        "Continue at 400°F another 10-12 min, flipping halfway, until potatoes are golden and broccoli has char."
+      ],
+      "nt": "Potatoes go first since they take longer — adding broccoli partway prevents overcooking it."
+    },
+    {
+      "n": "Air Fryer Cinnamon Sugar Almonds",
+      "c": "airfryer",
+      "t": [
+        "300°F",
+        "8-10 min",
+        "Carnival-style"
+      ],
+      "i": [
+        "1 lb raw almonds",
+        "1 egg white",
+        "1/2 tsp vanilla extract (optional)",
+        "1/2 cup sugar",
+        "1 tsp cinnamon",
+        "Pinch of salt"
+      ],
+      "m": [
+        "Whisk egg white until frothy, stir in almonds until fully coated.",
+        "Mix sugar, cinnamon, and salt separately. Toss coated almonds until evenly covered.",
+        "Line the sheet pan with parchment — sugar sticks and burns on bare metal.",
+        "Spread in a single layer.",
+        "Air fry at 300°F for 8-10 min, tossing halfway.",
+        "Cool completely on the pan before touching — they crisp as they cool."
+      ],
+      "nt": "Coating causes clumping — break apart once fully cooled. Store airtight."
+    },
+    {
+      "n": "Air Fryer Granola Clusters",
+      "c": "airfryer",
+      "t": [
+        "300°F",
+        "~15 min",
+        "Baseline"
+      ],
+      "i": [
+        "2 cups rolled oats",
+        "3 tbsp honey",
+        "2 tbsp oil",
+        "Optional: spoonful of peanut butter for binding"
+      ],
+      "m": [
+        "Mix oats, honey, and oil until evenly coated.",
+        "Press into an even layer on a parchment-lined sheet pan.",
+        "Air fry at 300°F ~15 min, flipping in sections once at halfway — this is a flat sheet pan, not a basket, so don't stir repeatedly.",
+        "Cool completely, undisturbed, before breaking into clusters."
+      ],
+      "nt": "Working baseline, not yet confirmed. Cooling undisturbed is what actually forms the clusters."
+    },
+    {
+      "n": "Air Fryer Citrus-Coconut Banana Fritters",
+      "c": "airfryer",
+      "t": [
+        "375°F",
+        "7-8 min",
+        "Dessert"
+      ],
+      "i": [
+        "2 firm-ripe bananas, ½-inch rounds",
+        "1/4 cup all-purpose flour",
+        "1 large egg, beaten",
+        "1/2 cup panko or shredded coconut",
+        "Zest of 1 orange or lime",
+        "1/4 tsp salt",
+        "Oil spray"
+      ],
+      "m": [
+        "Slice bananas ½-inch thick — firm-ripe, not overripe, so they hold up in the dredge.",
+        "Set up 3 stations: flour / beaten egg / panko-coconut mixed with zest and salt.",
+        "Dredge: flour, shake off, egg, press into coating.",
+        "Single layer on sheet pan, not touching.",
+        "Spray lightly with oil.",
+        "Air fry 375°F 4 min, flip, spray again, 3-4 more min until golden.",
+        "Serve immediately."
+      ],
+      "nt": "Skip cinnamon — citrus zest fits the bright direction better. Coconut chars nicer than panko. Spray, don't brush — brushing smears the coating."
+    },
+    {
+      "n": "Roasted Zucchini with Parmesan",
+      "c": "airfryer",
+      "t": [
+        "450°F + broil",
+        "8 min",
+        "Side"
+      ],
+      "i": [
+        "2 medium zucchini, ½-inch rounds",
+        "2 tbsp extra-virgin olive oil",
+        "½ tsp sea salt",
+        "½ tsp cracked black pepper",
+        "1 tsp garlic powder",
+        "½ cup grated Parmesan"
+      ],
+      "m": [
+        "Preheat oven to 450°F, rack centered.",
+        "Toss zucchini rounds with olive oil, salt, pepper, garlic powder.",
+        "Single layer on a rimmed sheet pan — don't overlap, overlapping steams them soggy. Top with Parmesan.",
+        "Bake 5 minutes, then switch to broil (High) 2-3 min more until the cheese is golden and zucchini is tender."
+      ],
+      "nt": "Source: The Modern Proper. No need to peel — skin holds most of the nutrition. Comes out tender-with-crisp-edges, not cracker-crisp; breadcrumbs with the Parmesan help if you want crunch. Air fryer conversion commonly cited by readers: ~400°F for 7-9 min."
+    },
+    {
+      "n": "Sriracha-Soy Marinade (Air Fryer Chicken)",
+      "c": "bowls",
+      "t": [
+        "375°F",
+        "Marinade",
+        "165°F"
+      ],
+      "i": [
+        "2 parts rice vinegar",
+        "2 parts soy sauce",
+        "1-2 parts sriracha",
+        "1 part honey or brown sugar",
+        "Sesame oil (drizzled after cooking)"
+      ],
+      "m": [
+        "Marinate chicken 30 min–2 hrs — don't go longer, vinegar breaks down texture.",
+        "Pat off excess marinade before air frying — excess liquid steams instead of crisping, and pooled sugar burns.",
+        "Air fry at 375°F, 10-12 min, flipping halfway, pull at 165°F internal.",
+        "Optional: baste with reserved unused marinade in the last 2-3 min.",
+        "Drizzle sesame oil right out of the fryer."
+      ],
+      "nt": "Without rice vinegar the base still works as a glaze — loses brightness but keeps sweet-spicy-savory. For partially frozen chicken, skip marinating and season dry instead, then brush sauce on near the end once the surface is dry."
+    },
+    {
+      "n": "Egg and Black Bean Burrito",
+      "c": "bowls",
+      "t": [
+        "Fast",
+        "High protein",
+        "Batchable"
+      ],
+      "i": [
+        "2-3 eggs",
+        "1/2 cup black beans, heated",
+        "Flour tortilla",
+        "Shredded cheese (optional)",
+        "Hot sauce (optional)"
+      ],
+      "m": [
+        "Scramble eggs in a pan or microwave mug.",
+        "Warm black beans separately.",
+        "Layer eggs and beans in the tortilla, add cheese if using.",
+        "Fold in the sides, roll tight.",
+        "Optional: pan-sear seam-side down 1-2 min to seal and crisp."
+      ],
+      "nt": "Scales easily for batch prep — wrap individually in foil and refrigerate or freeze."
+    },
+    {
+      "n": "Chicken Fajita Bowl",
+      "c": "bowls",
+      "t": [
+        "One pan",
+        "Meal prep"
+      ],
+      "i": [
+        "Chicken breast, sliced or cubed",
+        "1 bell pepper, sliced",
+        "1/2 onion, sliced",
+        "Rice, cooked",
+        "Shredded cheese",
+        "Avocado, sliced",
+        "Oil, salt, pepper, garlic powder, cumin"
+      ],
+      "m": [
+        "Season chicken with salt, pepper, spices.",
+        "Cook in a pan over medium-high until done through, remove and set aside.",
+        "Same pan: sauté peppers and onions until softened with char.",
+        "Serve chicken and vegetables over rice, top with cheese and avocado."
+      ],
+      "nt": "Cook a larger batch of chicken and vegetables at once, portion into containers for the week."
+    },
+    {
+      "n": "Teriyaki / Orange-Style Chicken Rice Bowl",
+      "c": "bowls",
+      "t": [
+        "Fast",
+        "Scratch version"
+      ],
+      "i": [
+        "Chicken breast, cubed",
+        "Bottled teriyaki or orange sauce",
+        "Rice, cooked",
+        "Frozen broccoli or stir-fry vegetables"
+      ],
+      "m": [
+        "Cook chicken cubes in a pan until browned and cooked through.",
+        "Add bottled sauce, stir to coat, simmer 2-3 min until slightly thickened.",
+        "Microwave or air fry the broccoli separately.",
+        "Serve over rice with broccoli on the side."
+      ],
+      "nt": "Scratch version of frozen orange chicken — uses chicken breast on hand instead of a pre-breaded frozen product."
+    },
+    {
+      "n": "Tuna Poke-Style Bowl",
+      "c": "bowls",
+      "t": [
+        "No-cook",
+        "Assembled fresh"
+      ],
+      "i": [
+        "1 can tuna, drained",
+        "Rice, cooked and cooled slightly",
+        "Avocado, sliced",
+        "Sriracha",
+        "Sesame oil or Kewpie sesame dressing"
+      ],
+      "m": [
+        "Flake tuna into a bowl.",
+        "Add rice, avocado, a drizzle of sriracha and sesame oil.",
+        "Mix gently and serve."
+      ],
+      "nt": "No cooking beyond the rice, but assembled fresh rather than pre-made."
+    },
+    {
+      "n": "Black Bean and Quinoa Salad",
+      "c": "sides",
+      "t": [
+        "No-cook",
+        "Make ahead",
+        "Mary Wellness"
+      ],
+      "i": [
+        "1½ cups quinoa, cooked",
+        "1 bell pepper, diced",
+        "1 jalapeño, seeded and diced",
+        "½ small red onion, finely chopped",
+        "1 (15-oz) can black beans, drained and rinsed",
+        "1 cup plum tomatoes, diced",
+        "Juice of 3 limes (~9 tbsp)",
+        "1 tsp Himalayan pink salt",
+        "¼ tsp black pepper",
+        "1 tsp granulated garlic",
+        "1 tsp cumin",
+        "1 tbsp honey",
+        "¼ cup chopped fresh cilantro",
+        "Fresh basil (optional garnish)"
+      ],
+      "m": [
+        "Tear basil into small pieces if using.",
+        "Mix all remaining ingredients until well combined.",
+        "Refrigerate 1-3 hours.",
+        "Garnish with basil."
+      ],
+      "nt": "Good calorie/protein-neutral side or bulking add-on — pairs well with rotisserie chicken or chicken chunks for a fast high-protein bowl."
+    },
+    {
+      "n": "Homemade Power Bar Clone (Chocolate Malt)",
+      "c": "snacks",
+      "t": [
+        "No-bake",
+        "Chill 2 hr",
+        "90s clone"
+      ],
+      "i": [
+        "1/2 cup brown rice syrup",
+        "3 tbsp maltodextrin powder",
+        "1/2 cup soy protein isolate",
+        "1 cup oat flour",
+        "1/4 cup rolled oats",
+        "2 tbsp cocoa powder",
+        "1 tbsp canola or light vegetable oil",
+        "1 tbsp barley malt extract (liquid)",
+        "1/4 tsp sea salt",
+        "2 tbsp water as needed"
+      ],
+      "m": [
+        "Whisk soy protein isolate, oat flour, rolled oats, cocoa, maltodextrin, and salt in a large bowl.",
+        "In a small saucepan over low heat, warm brown rice syrup, barley malt extract, and oil 60-90 seconds, stirring constantly — don't boil, just loosen it.",
+        "Pour the warm wet mixture into the dry, mix aggressively. Dough will be very stiff — that's correct. Add water sparingly only if it won't come together.",
+        "Line a loaf pan or silicone bar mold with plastic wrap. Press in firmly and evenly, compress hard — critical for texture, aim ~3/4 inch thick.",
+        "Refrigerate at least 2 hours, ideally overnight."
+      ],
+      "nt": "Maltodextrin is the key to the dense/waxy chew. Barley malt extract gives the malty undertone of the original."
+    },
+    {
+      "n": "Shelf-Stable Protein Bites",
+      "c": "snacks",
+      "t": [
+        "No-bake",
+        "~20 bites",
+        "2-3 weeks"
+      ],
+      "i": [
+        "1½ cups rolled oats",
+        "1/2 cup protein powder (casein preferred)",
+        "1/3 cup powdered peanut butter",
+        "1/4 cup ground chia seeds",
+        "2 tbsp coconut flour",
+        "1 tsp psyllium husk powder",
+        "1/3 cup pitted dates, soaked and mashed",
+        "2-3 tbsp water as needed",
+        "Optional: mini chocolate chips, chopped nuts, cocoa powder"
+      ],
+      "m": [
+        "Soak pitted dates in warm water 10 min, drain, mash into a smooth paste.",
+        "Combine oats, protein powder, powdered PB, chia, coconut flour, psyllium, and cocoa if using.",
+        "Mix in the date paste. Add water 1 tbsp at a time until it holds when squeezed but isn't sticky.",
+        "Let sit 10 minutes so the chia and psyllium absorb moisture and bind.",
+        "Press into an 8x8 pan and cut into squares, or roll into 1-inch balls with firm pressure.",
+        "Roll each in coconut flour, protein powder, or ground nuts.",
+        "Optional: dehydrate on parchment in a 170°F oven 20-30 min for max shelf stability."
+      ],
+      "nt": "~90-110 cal and 6-8g protein each. Keeps 2-3 weeks at room temp in an airtight container with parchment between layers. Psyllium continues firming them over the first 24 hours."
+    },
+    {
+      "n": "Homemade Tomato Jam",
+      "c": "sweet",
+      "t": [
+        "Stovetop",
+        "1-1.5 hr",
+        "2 weeks"
+      ],
+      "i": [
+        "2 lbs ripe tomatoes (Roma or plum), peeled and chopped",
+        "1½ cups sugar",
+        "2 tbsp lemon juice",
+        "1 tsp grated fresh ginger",
+        "1/2 tsp salt",
+        "Pinch red pepper flakes (optional)"
+      ],
+      "m": [
+        "Peel tomatoes: score an X on the bottom, 30 seconds in boiling water, then into ice water — skins slip off.",
+        "Combine everything in a large heavy-bottomed pot.",
+        "Boil, then reduce and simmer, stirring occasionally, until thick and jammy — about 1-1.5 hours.",
+        "Doneness test: drag a spoon across the bottom — if the jam doesn't immediately fill the space, it's done.",
+        "Remove any whole herb/citrus pieces before jarring."
+      ],
+      "nt": "Bright variation (no cinnamon): swap in orange zest strips, a lemongrass sprig, or one makrut lime leaf — plus optionally lemon verbena or 1-2 mint leaves. Light hand so the herb enhances rather than competes. Keeps ~2 weeks refrigerated."
+    },
+    {
+      "n": "Maker's Mark Bourbon Caramel Sauce",
+      "c": "sweet",
+      "t": [
+        "350-360°F",
+        "~1.5 cups",
+        "3-4 weeks"
+      ],
+      "i": [
+        "1 cup granulated sugar",
+        "1/4 cup water",
+        "3/4 cup heavy cream, warmed",
+        "4 tbsp unsalted butter, cubed",
+        "1/4 cup Maker's Mark bourbon",
+        "1 tsp fine sea salt",
+        "1 tsp vanilla extract"
+      ],
+      "m": [
+        "Warm the cream until hot but not boiling. Cold cream will seize the caramel and splatter violently.",
+        "Combine sugar and water in a heavy-bottomed pot. Stir gently over medium until fully dissolved and clear — no visible crystals.",
+        "Once it boils, STOP STIRRING. Swirl the pan by the handle occasionally until it hits deep amber / copper penny — target 350-360°F. Don't stop at light amber; the caramel needs that depth to stand up to the bourbon.",
+        "Off heat, whisk in the warm cream a little at a time — it bubbles up violently, stand back.",
+        "Whisk in butter a piece or two at a time until melted and glossy.",
+        "Off any open flame, pour in the bourbon, then return to low heat and simmer gently 2-3 min to cook off the raw alcohol edge.",
+        "Off heat, stir in salt and vanilla. Taste and adjust salt.",
+        "Cool at room temp — it thickens a lot. Jar once cooled to room temp (not hot, or you get condensation) and refrigerate."
+      ],
+      "nt": "Doubled batch: 2 cups sugar, 1/2 cup water, 1.5 cups cream, 1 stick butter, 1/2 cup bourbon, 2 tsp salt, 2 tsp vanilla — sugar:water stays 4:1. Use a pot with headroom, sugar/water filling only the bottom third. Keeps 3-4 weeks refrigerated, freezes 3 months in portions. Grainy on reheat? Keep whisking over low heat, it smooths out. Clean the pot by simmering water in it — the sugar dissolves right off."
+    },
+    {
+      "n": "Chicken and Lime Soup",
+      "c": "onepot",
+      "t": [
+        "1 hr 25 min",
+        "6 svg",
+        "$6.39",
+        "★4.92"
+      ],
+      "i": [
+        "3/4 lb chicken breast",
+        "6 cups chicken broth",
+        "14.5 oz can diced tomatoes with green chiles",
+        "1 medium yellow onion",
+        "2 stalks celery",
+        "1 medium jalapeño",
+        "4 cloves garlic",
+        "1 medium lime",
+        "1/2 bunch cilantro",
+        "1 medium avocado",
+        "2 tbsp olive oil",
+        "1 tsp oregano",
+        "1/2 tbsp cumin"
+      ],
+      "m": [
+        "Dice onion, celery, jalapeño (seeds scraped). Mince garlic. Soften all four in olive oil over medium, ~5 min.",
+        "Add whole chicken breast, broth, tomatoes with chiles, oregano, cumin. Boil, then low, lid on, simmer 1 hour.",
+        "Pull the chicken, shred with two forks, return to pot. Squeeze in the lime — scrape the inside with a spoon.",
+        "Chop cilantro, stir in, serve. Dice avocado over each bowl."
+      ],
+      "nt": "Budget Bytes. The hour simmer is passive — low-effort recipe with a long clock."
+    },
+    {
+      "n": "Italian Sausage & White Bean Skillet",
+      "c": "onepot",
+      "t": [
+        "25 min",
+        "4 svg",
+        "$6.26",
+        "★4.79"
+      ],
+      "i": [
+        "1 lb Italian sausage (hot, mild, or sweet)",
+        "2 × 15 oz cans cannellini beans",
+        "8 oz spinach",
+        "1 tbsp olive oil",
+        "Cracked black pepper"
+      ],
+      "m": [
+        "Casings off. Sausage into a deep skillet with olive oil, medium heat, broken up as it cooks — browned and crisp at the edges, ~10 min.",
+        "Rinse and drain beans meanwhile. Add beans and cracked pepper, stirring gently so they pick up the fat, heat through.",
+        "Chop spinach roughly, fold in by batches until wilted. Kill heat, taste, salt only if needed."
+      ],
+      "nt": "Budget Bytes. Highest effort-to-payoff ratio in the archive — five ingredients, 25 minutes, high protein and fiber. Cannellini specifically: big, firm, creamy, holds shape."
+    },
+    {
+      "n": "Southwest Chicken Skillet",
+      "c": "onepot",
+      "t": [
+        "25 min",
+        "4-6 svg",
+        "$6.76",
+        "★4.81"
+      ],
+      "i": [
+        "1.5-2 cups precooked shredded chicken",
+        "1 cup uncooked long grain white rice",
+        "1 cup salsa",
+        "15 oz can black beans",
+        "1¾ cups chicken broth",
+        "1 cup shredded cheese",
+        "2-3 green onions",
+        "1 tbsp chili powder"
+      ],
+      "m": [
+        "Everything but cheese and green onions into the skillet at once — rice, salsa, chicken, drained beans, chili powder, broth. Stir until combined.",
+        "Tight lid, high heat, full boil. The moment it boils, drop to low and simmer 15 min — keep it audibly simmering the whole time.",
+        "Heat off, lid on, rest 5 min. Fluff with a fork. Cheese on top, lid back on until melted, then green onions."
+      ],
+      "nt": "Budget Bytes. Brown rice will NOT swap in directly — different liquid ratio and cook time. Half a rotisserie chicken covers the protein. 'Chili powder' here means the mild blend, not ground chile."
+    },
+    {
+      "n": "Smoky White Bean Shakshuka",
+      "c": "onepot",
+      "t": [
+        "30 min",
+        "4 svg",
+        "$6.49",
+        "★4.79"
+      ],
+      "i": [
+        "28 oz can whole peeled tomatoes",
+        "15 oz can cannellini beans",
+        "4 large eggs",
+        "2 oz feta",
+        "1 yellow onion",
+        "4 cloves garlic",
+        "Handful fresh parsley",
+        "2 tbsp olive oil",
+        "1/2 tbsp smoked paprika",
+        "1 tsp ground cumin",
+        "1/2 tsp dried oregano",
+        "1/8 tsp red pepper flakes"
+      ],
+      "m": [
+        "Mince garlic, finely dice onion. Both into a deep skillet with olive oil, medium, until soft and translucent — ~5 min.",
+        "Add tomatoes and juice, crushing each by hand on the way in. Then smoked paprika, cumin, oregano, red pepper flakes, cracked pepper. Stir.",
+        "Simmer 5-7 min until thickened, stirring occasionally. Add 1/4 tsp salt, taste, adjust.",
+        "Drain beans, stir in, simmer 2-3 min more.",
+        "Crack eggs directly into the sauce. Lid on, 5 min, until whites set but yolks stay soft. Crumbled feta and parsley on top."
+      ],
+      "nt": "Budget Bytes, adapted from a New York Times recipe. Breakfast-for-dinner category."
+    },
+    {
+      "n": "Italian Wonderpot",
+      "c": "onepot",
+      "t": [
+        "25 min",
+        "6 svg",
+        "$6.24",
+        "★4.76"
+      ],
+      "i": [
+        "12 oz fettuccine",
+        "4 cups vegetable broth",
+        "28 oz can diced tomatoes",
+        "8 oz frozen chopped spinach",
+        "1 medium onion",
+        "4 cloves garlic",
+        "2 oz shaved Parmesan",
+        "2 tbsp olive oil",
+        "1/2 tbsp dried basil",
+        "1/2 tbsp dried oregano",
+        "1/4 tsp red pepper flakes"
+      ],
+      "m": [
+        "Broth into a large pot. Break the fettuccine in half and add it with everything else — tomatoes and juice, olive oil, frozen spinach, sliced onion, sliced garlic, basil, oregano, red pepper, cracked pepper.",
+        "Push everything under the liquid, lid on, high heat to a full boil. Then lid off, heat to medium.",
+        "Boil uncovered 10-15 min until pasta is cooked and most liquid is gone. Stir every few minutes — but don't over-stir or the pasta turns gluey.",
+        "Shaved Parmesan right before serving."
+      ],
+      "nt": "Budget Bytes. Most-voted in the archive (225 votes). Nothing gets pre-cooked — raw pasta, frozen spinach, everything goes in cold."
+    },
+    {
+      "n": "Pastalaya",
+      "c": "onepot",
+      "t": [
+        "45 min",
+        "6 svg",
+        "$7.51",
+        "★4.96"
+      ],
+      "i": [
+        "1/2 lb smoked sausage (Andouille preferred)",
+        "1 lb penne pasta",
+        "10 oz bag frozen 'seasoning mix' / trinity",
+        "15 oz can diced tomatoes",
+        "2 cups chicken broth",
+        "2 tbsp half and half or cream",
+        "2 cloves garlic",
+        "1/2 bunch fresh parsley",
+        "1/2 bunch green onions",
+        "1/2 tbsp Creole seasoning",
+        "1/2 tsp oregano",
+        "1/2 tsp smoked paprika",
+        "1/4 tsp thyme",
+        "1 tbsp vegetable oil"
+      ],
+      "m": [
+        "Slice sausage into thin rounds, halve oversized pieces. Into a large pot with oil, medium heat, until well browned — ~5 min.",
+        "Mince garlic, add, 1 min until fragrant. Frozen seasoning mix in, sauté 3-5 min. Then tomatoes with juice, Creole seasoning, oregano, smoked paprika, thyme, ~20 cranks of pepper, and the dry pasta. Broth and 1 cup water last. Stir.",
+        "Lid on, medium-high, boil. Stir briefly, lid back, low, simmer 10-12 min until pasta is tender, stirring every few minutes. Still soupy at minute 8? Finish uncovered. A little thick sauce at the bottom is right.",
+        "Chop parsley and slice green onions while it simmers.",
+        "Heat off. Stir in cream and most of the herbs, saving some to scatter over each bowl."
+      ],
+      "nt": "Budget Bytes. Highest-rated in the archive at 4.96. The 'seasoning mix' is frozen pre-chopped onion, bell pepper, celery — the Louisiana trinity. Fresh sub: one yellow onion, one green bell pepper, two celery stalks. Store-bought Creole seasoning runs salty."
+    },
+    {
+      "n": "Chimichurri Chicken and Rice",
+      "c": "onepot",
+      "t": [
+        "55 min",
+        "4 svg",
+        "$5.25",
+        "★4.79"
+      ],
+      "i": [
+        "CHIMICHURRI:",
+        "1/2 cup fresh parsley, chopped",
+        "1/2 cup fresh cilantro, chopped",
+        "1 clove garlic",
+        "2 tbsp red wine vinegar",
+        "1/4 cup extra virgin olive oil",
+        "1/2 tsp dried oregano",
+        "1/4 tsp cumin",
+        "Pinch red pepper flakes",
+        "CHICKEN & RICE:",
+        "1 boneless skinless chicken breast (3/4 lb)",
+        "1 cup long grain white rice",
+        "1 yellow onion",
+        "2 Roma tomatoes",
+        "1/2 cup frozen peas",
+        "1 tbsp olive oil"
+      ],
+      "m": [
+        "Chimichurri first so it has time to sit. Combine olive oil, red wine vinegar, oregano, cumin, red pepper flakes, salt in a bowl.",
+        "Strip parsley and cilantro leaves off stems, chop fine, mince garlic. Stir all three in. Set aside.",
+        "Cut chicken into very small pieces, season with salt and pepper. Olive oil in a deep skillet, medium, sauté until golden brown.",
+        "Dice onion while that browns. Pull the chicken, onion in its place, sauté ~5 min until soft.",
+        "Dice tomatoes, add once onion is soft, sauté 2 min until they start breaking down.",
+        "Chicken back in, plus frozen peas, uncooked rice, 1½ cups water, 1/4 tsp salt. Stir briefly.",
+        "Lid on, medium-high, boil. Low, simmer gently 15 min. Heat off, rest 10 min still covered.",
+        "Lid off, fluff with a fork. Pour chimichurri over and fold in gently — vigorous stirring makes the rice sticky and mushy.",
+        "Taste, adjust salt, garnish with extra herbs."
+      ],
+      "nt": "Budget Bytes. Cheapest per serving in the archive at $1.34. The chimichurri is raw and folded in at the end, so all its brightness survives."
+    },
+    {
+      "n": "Chili Cheese Beef n Mac",
+      "c": "onepot",
+      "t": [
+        "35 min",
+        "6 svg",
+        "$7.81",
+        "★4.79"
+      ],
+      "i": [
+        "1 lb ground beef",
+        "2 cups / 1/2 lb dry macaroni",
+        "2 cups beef broth",
+        "8 oz can tomato sauce",
+        "1 cup / 4 oz shredded sharp cheddar",
+        "1 small onion",
+        "2 cloves garlic",
+        "2 tbsp all-purpose flour",
+        "1 tbsp chili powder",
+        "1/2 tsp smoked paprika",
+        "1/2 tsp dried oregano",
+        "1 tbsp olive oil"
+      ],
+      "m": [
+        "Brown the beef in a large pot over medium with olive oil. Drain excess fat. Dice onion and mince garlic while it browns.",
+        "Onion and garlic into the drained beef, cook until the onion softens and turns translucent. Add flour, cook 1 min stirring constantly — it'll coat the bottom, that's fine as long as the heat is low enough not to burn.",
+        "Chili powder, smoked paprika, oregano, tomato sauce, beef broth in. Stir to dissolve everything stuck to the bottom.",
+        "Dry pasta in, lid on, bring to a simmer, then low ~15 min until pasta is soft and liquid is absorbed. Stir every few minutes; splash of water if it dries early.",
+        "Heat off, stir in the cheese. Serve hot."
+      ],
+      "nt": "Budget Bytes. Homemade Hamburger Helper, essentially — the flour step is a quick roux that turns broth into sauce rather than soup."
+    },
+    {
+      "n": "Sausage and Kale Skillet",
+      "c": "onepot",
+      "t": [
+        "30 min",
+        "4 svg",
+        "$6.02",
+        "★4.88"
+      ],
+      "i": [
+        "1/2 of a 19 oz package Italian sausage",
+        "1 bunch kale",
+        "15 oz can chickpeas",
+        "1 cup marinara sauce",
+        "1 cup shredded mozzarella"
+      ],
+      "m": [
+        "Squeeze sausage out of its casings into a large skillet — freeze the remaining links. Cook over medium until fully browned, breaking it up. Some sticking is fine.",
+        "Strip woody stems from the kale, slice crosswise into thin strips, rinse well. Into the skillet, stirred into the sausage, until fully wilted — a few minutes.",
+        "Drain and rinse the chickpeas, add, stir to combine. Marinara poured over, then mozzarella on top. Lid on, simmer 5-10 min until the cheese melts."
+      ],
+      "nt": "Budget Bytes. Five ingredients. Adding pasta stretches it further."
+    },
+    {
+      "n": "Schwan's-Style American Goulash",
+      "c": "onepot",
+      "t": [
+        "35 min",
+        "6 svg",
+        "Copycat"
+      ],
+      "i": [
+        "1.5 lb ground beef (80/20)",
+        "1 medium onion, diced",
+        "2 cloves garlic",
+        "24 oz tomato sauce",
+        "14.5 oz can diced tomatoes",
+        "1 cup beef broth",
+        "1 tbsp Worcestershire sauce",
+        "1 tsp sugar",
+        "1 tsp salt, 1/2 tsp black pepper",
+        "1/2 tsp paprika",
+        "1 tsp dried basil",
+        "1/2 tsp dried oregano",
+        "2 cups dried elbow macaroni",
+        "1 tbsp butter to finish"
+      ],
+      "m": [
+        "Brown the beef with onion and garlic in a large pot or Dutch oven over medium-high, breaking up the meat, until browned and the onion's soft — ~8 min. Drain most of the fat, leave a little.",
+        "Stir in tomato sauce, diced tomatoes, beef broth, Worcestershire, sugar, salt, pepper, paprika, basil, oregano. Bring to a simmer.",
+        "Stir the dried macaroni directly into the sauce. Cover, simmer, stirring occasionally, until the pasta is tender — ~15 min.",
+        "Off heat, stir in the butter for gloss. Taste and adjust salt. Rest 5 min before serving; it thickens as it sits."
+      ],
+      "nt": "Copycat build — no public Schwan's recipe exists. Keep it sauce-forward, not chunky. No bell peppers, no cheese — the original was plain. The sugar is a corrective for acidity, not for sweetness."
+    },
+    {
+      "n": "Korean Ground Beef Bowls",
+      "c": "bowls",
+      "t": [
+        "20 min",
+        "4 svg",
+        "Meal prep"
+      ],
+      "i": [
+        "1 lb lean ground beef (90%)",
+        "3 cloves garlic, minced",
+        "1/4 cup packed brown sugar",
+        "3 tbsp–1/4 cup reduced-sodium soy sauce or tamari",
+        "1-2 tbsp gochujang",
+        "2 tsp sesame oil",
+        "Fresh ginger, ½-inch matchsticks",
+        "1/4 tsp gochugaru or red pepper flakes",
+        "1/4 tsp black pepper",
+        "2 cups cooked rice",
+        "Green onions + sesame seeds to garnish"
+      ],
+      "m": [
+        "Brown the ground beef and minced garlic together in a large skillet over medium, breaking into crumbles until no pink remains. Drain the grease.",
+        "Whisk the sauce meanwhile: brown sugar, soy/tamari, gochujang, sesame oil, ginger matchsticks, gochugaru, black pepper.",
+        "Pour over the beef and simmer a minute or two until it tightens and coats.",
+        "Serve over hot rice. Green onions and sesame seeds on top."
+      ],
+      "nt": "Source: The Recipe Critic (4.89 from 735 votes), modified. Gochujang carries its own salt and sugar so the soy gets cut back — otherwise it's salty and sweet at once. Tamari over standard soy: smoother, lets sesame and ginger through. Ginger in ½-inch matchsticks, not grated — they hold up through the simmer and give distinct bites. Most common note across the reviews: double the sauce."
+    },
+    {
+      "n": "Anyday Microwave Brown Rice",
+      "c": "microwave",
+      "t": [
+        "M.Low / PL4",
+        "30 min",
+        "Confirmed"
+      ],
+      "i": [
+        "1 cup brown rice",
+        "1⅓ cups water",
+        "Pinch of salt (optional)"
+      ],
+      "m": [
+        "Rinse rice in the Deep Dish until the water runs clear — non-negotiable, prevents gumminess.",
+        "Add water, stir, spread in an even layer.",
+        "Cover with lid, knob lifted (venting).",
+        "M.Low (≈PL4), 30 minutes.",
+        "Fluff and serve."
+      ],
+      "nt": "Anyday's official ratio is 1:1⅓ — NOT the standard stovetop 1:2. The dish traps steam more efficiently. Must be the Deep Dish, not Shallow. Never full power — it burns. Confirmed working on the Galanz at 30 min. For mushier rice, bump water to 1½ cups, same time and power."
+    },
+    {
+      "n": "Anyday Microwave White Rice",
+      "c": "microwave",
+      "t": [
+        "M.Low / PL4",
+        "20-22 min"
+      ],
+      "i": [
+        "1 cup white rice (long-grain, jasmine, or basmati)",
+        "1⅓ cups water"
+      ],
+      "m": [
+        "Rinse in the Deep Dish until clear.",
+        "Add water, spread in an even layer, cover with lid knob lifted.",
+        "M.Low (PL4), 20-22 minutes.",
+        "Rest 5 minutes with the lid on.",
+        "Fluff and serve."
+      ],
+      "nt": "Same 1:1⅓ ratio as brown rice, just faster. Cap at 1-1½ cups dry per batch — 2 cups overfills the Deep Dish with the lid on. If you do scale to 2 cups: 2⅔ cups water, PL5 (Med), 25 min. Cook two batches instead."
+    },
+    {
+      "n": "Anyday Mango Sticky Rice",
+      "c": "microwave",
+      "t": [
+        "PL5 / Med",
+        "20 min",
+        "Dessert"
+      ],
+      "i": [
+        "½ cup (100g) glutinous / sweet rice",
+        "¾ cup (240ml) water",
+        "1 tbsp sugar",
+        "⅛ tsp kosher salt",
+        "½ cup (120ml) full-fat coconut milk",
+        "1 ripe mango, sliced",
+        "Sweetened condensed milk (optional, to drizzle)"
+      ],
+      "m": [
+        "Rinse rice in the Anyday dish until the water runs clear.",
+        "Add water, sugar, salt, stir. Cover with lid, knob lifted.",
+        "Power Level 5 (Med), 20 minutes, until liquid is absorbed and rice is tender.",
+        "Stir in the coconut milk, re-cover, let soak 10-15 minutes off heat — this step is what makes it creamy and sticky, not more cooking.",
+        "Portion, top with mango, drizzle condensed milk if using."
+      ],
+      "nt": "Anyday's own tested dessert recipe — their only purpose-built sweet rice. Starchy water may seep up around the knob during cooking; that's normal."
+    },
+    {
+      "n": "Air Fryer Roasted Peppers",
+      "c": "airfryer",
+      "t": [
+        "400°F",
+        "12 min",
+        "Side"
+      ],
+      "i": [
+        "3 bell peppers, sliced into strips",
+        "1 tbsp olive oil",
+        "2 cloves garlic, minced",
+        "½ tsp salt",
+        "¼ tsp black pepper",
+        "½ tsp Italian seasoning or dried oregano",
+        "1 tsp balsamic vinegar (optional)"
+      ],
+      "m": [
+        "Toss peppers with olive oil, garlic, salt, pepper, and seasoning until evenly coated.",
+        "Preheat air fryer to 400°F for 3 minutes.",
+        "Spread in a single layer on the sheet pan — don't overcrowd, cook in batches if needed. Air fry at 400°F ~12 minutes, shaking or turning halfway.",
+        "Peppers should be tender with charred, blistered edges. Drizzle with balsamic if using, serve warm."
+      ],
+      "nt": "Good as a side, tossed into pasta or grain bowls, over steak or chicken, or piled onto a sandwich. Add 2-3 extra minutes for more char. If pairing with a strongly herbal aioli, drop the Italian seasoning here and let the peppers stay simple — oil, garlic, salt, pepper — so the sauce is the statement."
+    },
+    {
+      "n": "Air Fryer Tilapia",
+      "c": "airfryer",
+      "t": [
+        "400°F",
+        "10-12 min",
+        "145°F"
+      ],
+      "i": [
+        "4 × 5oz tilapia fillets",
+        "Salt and pepper",
+        "Light oil"
+      ],
+      "m": [
+        "Pat fillets dry, season.",
+        "Air fry at 400°F for 10-12 minutes, flipping halfway.",
+        "Done when they flake easily and hit 145°F internal."
+      ],
+      "nt": "Sized for the Ninja XL. Raw fish keeps only 1-2 days refrigerated per USDA — cooking does not neutralize toxins bacteria have already produced, so don't try to rescue old fish with high heat."
+    },
+    {
+      "n": "Air Fryer Chicken Breast — Working Baseline",
+      "c": "airfryer",
+      "t": [
+        "370°F",
+        "Calibrated",
+        "165°F"
+      ],
+      "i": [
+        "Chicken breasts (Kirkland, air chilled preferred)",
+        "Salt",
+        "Dry rub of choice — smoked paprika + coriander, or garam masala + turmeric",
+        "Oil for the foil"
+      ],
+      "m": [
+        "Pat chicken thoroughly dry — this is what lets the surface brown instead of steam.",
+        "Season both sides. Oil the foil on the sheet pan.",
+        "TWO FULLY THAWED BREASTS: 370°F, 22-25 minutes, probe check at 20 minutes.",
+        "THREE PARTIALLY THAWED BREASTS: 370°F, ~29 minutes (31 came out slightly overdone). Start probing around 25.",
+        "Pull at 165°F internal. Rest 3-5 minutes before cutting."
+      ],
+      "nt": "Calibrated on the Ninja Foodi XL over multiple sessions — sheet pan, not the crisper tray. Air chilled browns better and needs less prep than water chilled due to lower surface moisture. On partially frozen breasts, the Leidenfrost effect off the top burner creates a steam barrier: the outside looks done while the center is still raw. Flipping halfway distributes the burner exposure and lets the bottom dry out and actually cook."
+    },
+    {
+      "n": "Air Fryer Silicone Mold Egg Bites",
+      "c": "airfryer",
+      "t": [
+        "300°F",
+        "10-11 min",
+        "Do not exceed"
+      ],
+      "i": [
+        "Eggs, whisked",
+        "Splash of milk",
+        "Mix-ins: cheese, spinach, cooked chicken, black beans",
+        "Salt, pepper"
+      ],
+      "m": [
+        "Whisk eggs with milk, salt, and pepper.",
+        "Distribute mix-ins into the silicone mold, pour egg mixture over, filling about 3/4 full — don't overfill.",
+        "Air fry at 300°F for 10-11 minutes.",
+        "Pull early and rely on carryover heat to finish.",
+        "Cool a few minutes before popping out."
+      ],
+      "nt": "300°F is a ceiling, not a suggestion. Blue-green discoloration on the BOTTOM is steam from the mold — normal and harmless. Gray-green through the INTERIOR is overheating: sulfur proteins release hydrogen sulfide, which reacts with iron to form iron sulfide. Safe to eat, but it means the temp was too high. A batch run at 360°F for 9 minutes produced exactly that."
+    },
+    {
+      "n": "Seasoned Black Beans",
+      "c": "sides",
+      "t": [
+        "Stovetop",
+        "5 min",
+        "Stretcher"
+      ],
+      "i": [
+        "1 can black beans, drained and rinsed",
+        "Salt",
+        "Smoked paprika",
+        "Dried oregano",
+        "Splash of broth"
+      ],
+      "m": [
+        "Add drained beans to a small pot.",
+        "Season with salt, smoked paprika, and oregano.",
+        "Add a splash of broth and simmer until heated through and the liquid tightens slightly."
+      ],
+      "nt": "Cheap, fast way to stretch a meal — works as a side, folded into soup to extend it, or as filler in bowls and burritos. Part of the core baseline rotation: chicken, rice, eggs, black beans, broccoli."
+    },
+    {
+      "n": "Garlic Parmesan Aioli",
+      "c": "sauce",
+      "t": [
+        "Savory"
+      ],
+      "f": "½ cup mayo + 1 tsp roasted garlic + 2 tbsp grated parmesan + 1 tsp lemon juice",
+      "nt": "Great with chicken chunks or as a dip for potato cubes."
+    },
+    {
+      "n": "Sriracha Lime Aioli",
+      "c": "sauce",
+      "t": [
+        "Savory",
+        "Top pick"
+      ],
+      "f": "½ cup mayo + 1-2 tbsp sriracha + 1 tbsp lime juice + 1 tsp honey",
+      "nt": "Sriracha and honey are already pantry staples — just needs the mayo."
+    },
+    {
+      "n": "Chipotle Honey Aioli",
+      "c": "sauce",
+      "t": [
+        "Savory"
+      ],
+      "f": "½ cup mayo + 1 tbsp minced chipotle in adobo + 1 tbsp honey + 1 tsp lime juice",
+      "nt": "Smoky-sweet, great on tacos or drizzled over chicken."
+    },
+    {
+      "n": "Smoky Paprika Aioli",
+      "c": "sauce",
+      "t": [
+        "Savory",
+        "Top pick"
+      ],
+      "f": "½ cup mayo + 1 tsp smoked paprika + ½ tsp garlic powder + 1 tsp vinegar",
+      "nt": "Closest DIY dupe to the Tari Rocoto flavor — good stopgap without the bottle."
+    },
+    {
+      "n": "Curry Aioli",
+      "c": "sauce",
+      "t": [
+        "Savory"
+      ],
+      "f": "½ cup mayo + 1 tsp curry powder + 1 tsp honey",
+      "nt": "Unexpectedly good with chicken and potatoes."
+    },
+    {
+      "n": "Buffalo Aioli",
+      "c": "sauce",
+      "t": [
+        "Savory"
+      ],
+      "f": "½ cup mayo + 2 tbsp Frank's RedHot + 1 tsp melted butter",
+      "nt": "Dip for chicken chunks, or spread on a sandwich."
+    },
+    {
+      "n": "Basil Pesto Aioli",
+      "c": "sauce",
+      "t": [
+        "Savory"
+      ],
+      "f": "½ cup mayo + 2 tbsp pesto",
+      "nt": "Good on sandwiches."
+    },
+    {
+      "n": "Everything Bagel Aioli",
+      "c": "sauce",
+      "t": [
+        "Savory",
+        "No-cook"
+      ],
+      "f": "½ cup mayo + 1 tbsp everything bagel seasoning + 1 tsp lemon juice",
+      "nt": "Great on eggs or as a quick sandwich spread."
+    },
+    {
+      "n": "BBQ Ranch Aioli",
+      "c": "sauce",
+      "t": [
+        "Savory"
+      ],
+      "f": "½ cup mayo + 2 tbsp BBQ sauce + ½ tsp ranch seasoning",
+      "nt": "Works as a dip or burger spread."
+    },
+    {
+      "n": "Classic Garlic Herb Aioli",
+      "c": "sauce",
+      "t": [
+        "Herbal"
+      ],
+      "f": "½ cup mayo + 1 clove minced garlic + 1 tbsp parsley + 1 tsp chives + 1 tsp lemon juice",
+      "nt": "All-purpose green aioli — good on almost anything."
+    },
+    {
+      "n": "Basil Lemon Aioli",
+      "c": "sauce",
+      "t": [
+        "Herbal"
+      ],
+      "f": "½ cup mayo + 2 tbsp fresh basil + 1 tsp lemon zest + ½ tsp minced garlic",
+      "nt": "Bright, works on sandwiches or grilled chicken."
+    },
+    {
+      "n": "Dill & Lemon Aioli",
+      "c": "sauce",
+      "t": [
+        "Herbal"
+      ],
+      "f": "½ cup mayo + 1 tbsp fresh (or 1 tsp dried) dill + 1 tsp lemon juice + ½ tsp minced garlic",
+      "nt": "Classic with fish, also great with tuna."
+    },
+    {
+      "n": "Chive & Black Pepper Aioli",
+      "c": "sauce",
+      "t": [
+        "Herbal"
+      ],
+      "f": "½ cup mayo + 1 tbsp fresh chives + ½ tsp cracked black pepper + 1 tsp lemon juice",
+      "nt": "Simple, clean flavor — good all-purpose option."
+    },
+    {
+      "n": "Cilantro Lime Aioli",
+      "c": "sauce",
+      "t": [
+        "Herbal",
+        "Top pick"
+      ],
+      "f": "½ cup mayo + 2 tbsp cilantro + 1 tbsp lime juice + ½ tsp minced garlic + pinch cumin",
+      "nt": "Great with the fajita bowl or tuna poke bowl."
+    },
+    {
+      "n": "Rosemary Garlic Aioli",
+      "c": "sauce",
+      "t": [
+        "Herbal"
+      ],
+      "f": "½ cup mayo + 1 tsp minced fresh rosemary + 1 tsp roasted garlic",
+      "nt": "Earthier profile, good with potatoes."
+    },
+    {
+      "n": "Tarragon Aioli",
+      "c": "sauce",
+      "t": [
+        "Herbal"
+      ],
+      "f": "½ cup mayo + 1 tsp fresh tarragon + 1 tsp white wine vinegar + ½ tsp dijon",
+      "nt": "French-leaning, great on chicken sandwiches."
+    },
+    {
+      "n": "Mint & Lemon Aioli",
+      "c": "sauce",
+      "t": [
+        "Herbal"
+      ],
+      "f": "½ cup mayo + 1 tbsp fresh mint + 1 tsp lemon juice + ½ tsp minced garlic",
+      "nt": "Unexpected but refreshing on grilled meats."
+    },
+    {
+      "n": "Herbes de Provence Aioli",
+      "c": "sauce",
+      "t": [
+        "Herbal"
+      ],
+      "f": "½ cup mayo + 1 tsp herbes de Provence + 1 tsp lemon zest",
+      "nt": "Earthy, floral. Lavender can turn soapy — start at ¼ tsp and lean on lemon and garlic to carry it."
+    },
+    {
+      "n": "Sage & Garlic Aioli",
+      "c": "sauce",
+      "t": [
+        "Herbal"
+      ],
+      "f": "½ cup mayo + 1 tsp fresh sage + ½ tsp minced garlic + pinch black pepper",
+      "nt": "Richer profile, good with potatoes or poultry."
+    },
+    {
+      "n": "Harissa Aioli",
+      "c": "sauce",
+      "t": [
+        "New frontier",
+        "Confirmed go-to"
+      ],
+      "f": "½ cup mayo + 1-2 tbsp harissa + 1 tsp lemon juice + ½ tsp minced garlic (optional)",
+      "nt": "Confirmed burger sauce. Scale the harissa up for more heat."
+    },
+    {
+      "n": "Chili Crisp Aioli",
+      "c": "sauce",
+      "t": [
+        "New frontier"
+      ],
+      "f": "½ cup mayo + 1-2 tbsp chili crisp (spoon in the crispy bits, not just oil) + 1 tsp rice vinegar",
+      "nt": "Crunchy, savory, a little numbing. Great on eggs, burgers, or chicken chunks."
+    },
+    {
+      "n": "Ginger Scallion Aioli",
+      "c": "sauce",
+      "t": [
+        "New frontier"
+      ],
+      "f": "½ cup mayo + 1 tsp grated fresh ginger + 2 tbsp scallions + 1 tsp rice vinegar + pinch salt",
+      "nt": "Bright and savory — excellent on chicken."
+    },
+    {
+      "n": "Ancho Aioli",
+      "c": "sauce",
+      "t": [
+        "New frontier"
+      ],
+      "f": "½ cup mayo + 1 tsp ancho chile powder + 1 tsp lime juice + pinch salt",
+      "nt": "Mild, earthy heat with raisin-like sweetness. Good on tacos or burgers."
+    },
+    {
+      "n": "Preserved Lemon Aioli",
+      "c": "sauce",
+      "t": [
+        "New frontier"
+      ],
+      "f": "½ cup mayo + 1 tsp preserved lemon paste + ½ tsp minced garlic",
+      "nt": "Salty, tangy, a little funky in the best way. Great on sandwiches or with fish."
+    },
+    {
+      "n": "Tari Cheat Aioli",
+      "c": "sauce",
+      "t": [
+        "Shortcut",
+        "No recipe"
+      ],
+      "f": "Stir Tari Aji Amarillo or Aji Rocoto directly into mayo, 1:1 to taste",
+      "nt": "Amarillo: bright, fruity, mild. Rocoto: smoky, bolder. Instant aioli from bottles already in rotation."
+    }
+  ]
+}
