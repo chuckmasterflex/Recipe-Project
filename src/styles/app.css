@@ -1,18 +1,7 @@
-.wrap {
-  max-width: 680px;
-  margin: 0 auto;
-  padding: 32px 16px 64px;
-}
+/* .wrap, .eyebrow, .section-label, .tag/.tag--accent live in tokens.css —
+   they're shared primitives the standalone guide pages also rely on. */
 
 /* ---- header ---- */
-
-.eyebrow {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--red);
-}
 
 .title {
   font-family: var(--font-display);
@@ -181,22 +170,6 @@
   gap: 6px;
 }
 
-.tag {
-  font-family: var(--font-mono);
-  font-size: 8.5px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  padding: 3px 7px;
-  border-radius: 4px;
-  background: var(--panel2);
-  color: var(--dim);
-}
-
-.tag--accent {
-  background: color-mix(in srgb, var(--accent) 20%, var(--panel2));
-  color: var(--accent);
-}
-
 .rec__chev {
   flex: 0 0 auto;
   font-size: 18px;
@@ -288,24 +261,6 @@
 }
 
 /* ---- guides ---- */
-
-.section-label {
-  font-family: var(--font-mono);
-  font-size: 11px;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--red);
-  margin: 36px 0 12px;
-  position: relative;
-}
-
-.section-label::after {
-  content: '';
-  display: block;
-  height: 1px;
-  background: var(--line);
-  margin-top: 8px;
-}
 
 .guide {
   display: flex;
