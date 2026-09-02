@@ -1,5 +1,6 @@
 import { useState, type CSSProperties } from 'react'
 import type { Category, Recipe } from '../types'
+import { slug } from '../lib/slug'
 
 /**
  * One recipe. Native <details> was used in the static build; here it's state-driven
@@ -15,7 +16,12 @@ export default function RecipeCard({ recipe, category }: { recipe: Recipe; categ
   const accent = category.c
 
   return (
-    <div className="rec" data-cat={recipe.c} style={{ '--accent': accent } as CSSProperties}>
+    <div
+      className="rec"
+      id={`recipe-${slug(recipe.n)}`}
+      data-cat={recipe.c}
+      style={{ '--accent': accent } as CSSProperties}
+    >
       <button className="rec__head" onClick={() => setOpen((o) => !o)} aria-expanded={open}>
         <span className="rec__left">
           <span className="rec__name">{recipe.n}</span>

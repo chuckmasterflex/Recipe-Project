@@ -1,6 +1,7 @@
-import { useMemo, useState } from 'react'
+import { useMemo, useState, type CSSProperties } from 'react'
 import rawData from './data/recipes.json'
 import RecipeCard from './components/RecipeCard'
+import FeaturedRail, { type FeaturedItem } from './components/FeaturedRail'
 import type { Recipe, RecipeData } from './types'
 import './styles/tokens.css'
 import './styles/app.css'
@@ -8,6 +9,16 @@ import './styles/app.css'
 const data = rawData as RecipeData
 const { recipes, categories, guides } = data
 const CAT_KEYS = Object.keys(categories)
+
+// A recipe carrying one of these tags is the standout in its category —
+// prefer it for the rail. Falls back to the first recipe in category order.
+const HIGHLIGHT_TAGS = new Set(['Top pick', 'Confirmed go-to', 'Confirmed'])
+
+const FEATURED: FeaturedItem[] = CAT_KEYS.map((k) => {
+  const inCategory = recipes.filter((r) => r.c === k)
+  const pick = inCategory.find((r) => (r.t ?? []).some((t) => HIGHLIGHT_TAGS.has(t)))
+  return { recipe: pick ?? inCategory[0], category: categories[k] }
+})
 
 interface IndexedRecipe extends Recipe {
   _hay: string
@@ -74,6 +85,9 @@ export default function App() {
         </div>
       </header>
 
+      <div className="section-label">Chef's Picks</div>
+      <FeaturedRail items={FEATURED} />
+
       <input
         className="search"
         type="search"
@@ -117,7 +131,12 @@ export default function App() {
       {guides.map((g) => (
         // Guides live in /public as standalone HTML — plain anchors, not routes.
         // import.meta.env.BASE_URL keeps them correct under the GH Pages subpath.
-        <a key={g.f} className="guide" href={`${import.meta.env.BASE_URL}${g.f}`}>
+        <a
+          key={g.f}
+          className="guide"
+          href={`${import.meta.env.BASE_URL}${g.f}`}
+          style={{ '--accent': g.c } as CSSProperties}
+        >
           <span className="guide__icon" style={{ background: g.c }}>
             {g.i}
           </span>
