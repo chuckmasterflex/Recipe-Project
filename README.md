@@ -149,10 +149,11 @@ reference card. Leave it.
 
 ## Known gaps
 
-- **The six guide pages in `public/` are placeholders**, not the real
-  content — generated from the guide metadata so links resolve instead of
-  404ing. Drop the real HTML files in and they replace the placeholders,
-  no code changes needed.
+- **Two guide pages in `public/` are still placeholders**: `one-pot-guide.html`
+  and `schwans-goulash.html`. The other four (`aioli-guide.html`,
+  `mother-sauces-guide.html`, `korean-beef-bowls.html`, `lbj-chili.html`) are
+  the real content. Drop the remaining HTML files in and they replace the
+  placeholders, no code changes needed.
 - **Recipe permalinks / deep linking** aren't implemented (would need
   `HashRouter`, or a `404.html` redirect shim — GH Pages doesn't do SPA
   fallback natively).

@@ -1,74 +1,508 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#14100E" />
-    <title>Aioli Guide — The Recipe Hub</title>
-    <style>
-      :root {
-        --bg: #14100e;
-        --panel: #1f1917;
-        --line: #3d322e;
-        --cream: #f2eae2;
-        --dim: #a99c93;
-        --red: #c8452f;
-        --gold: #E0A33E;
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--cream);
-        font-family: -apple-system, system-ui, sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 24px;
-      }
-      main {
-        max-width: 440px;
-        text-align: center;
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-top: 3px solid var(--gold);
-        border-radius: 10px;
-        padding: 32px 28px;
-      }
-      .icon {
-        width: 44px;
-        height: 44px;
-        margin: 0 auto 16px;
-        border-radius: 8px;
-        background: var(--gold);
-        color: var(--bg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 18px;
-      }
-      h1 { font-size: 19px; margin: 0 0 8px; }
-      p { color: var(--dim); line-height: 1.6; font-size: 14px; margin: 0 0 20px; }
-      .note {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: var(--red);
-        margin-bottom: 20px;
-      }
-      a { color: var(--gold); text-decoration: none; font-size: 13px; }
-      a:hover { text-decoration: underline; }
-    </style>
-  </head>
-  <body>
-    <main>
-      <div class="icon">A</div>
-      <div class="note">Guide pending</div>
-      <h1>Aioli Guide</h1>
-      <p>All 24 aiolis with Pantone-matched color swatches. This standalone guide hasn't been added to the repo yet — drop the real aioli-guide.html into /public and it replaces this placeholder, no code changes needed.</p>
-      <a href="./index.html">← Back to the Recipe Hub</a>
-    </main>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aioli Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1F1B16;
+    --panel: #2A241C;
+    --panel-line: #3B3327;
+    --cream: #F0E9DE;
+    --cream-dim: #C9BFAF;
+    --brass: #C9A15A;
+    --brass-dim: #9C7F49;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'Work Sans', sans-serif;
+    padding: 0 0 60px;
+  }
+  .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 32px 20px 0;
+  }
+  header {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .eyebrow {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 10px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 38px;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+  .sub {
+    font-size: 14px;
+    color: var(--cream-dim);
+    line-height: 1.5;
+    max-width: 460px;
+    margin: 0 auto 8px;
+  }
+  .disclaimer {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    color: var(--brass-dim);
+    text-align: center;
+    margin: 14px 0 36px;
+    line-height: 1.6;
+  }
+  .section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 44px 0 18px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--panel-line);
+  }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-radius: 10px;
+    padding: 18px 20px 20px;
+    margin-bottom: 14px;
+  }
+  .card-top {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+  .num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--brass-dim);
+  }
+  .name {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 19px;
+    color: var(--cream);
+  }
+  .swatch-row {
+    display: flex;
+    border-radius: 6px;
+    overflow: hidden;
+    height: 22px;
+    margin-bottom: 8px;
+  }
+  .swatch-seg {
+    flex: 1;
+  }
+  .swatch-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10.5px;
+    color: var(--cream-dim);
+    margin-bottom: 14px;
+  }
+  .swatch-label b {
+    color: var(--cream);
+    font-weight: 500;
+  }
+  ul {
+    margin: 0 0 10px;
+    padding-left: 18px;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--cream);
+  }
+  li { margin-bottom: 2px; }
+  .note {
+    font-size: 13px;
+    color: var(--cream-dim);
+    font-style: italic;
+    line-height: 1.5;
+    border-top: 1px solid var(--panel-line);
+    padding-top: 10px;
+    margin-top: 4px;
+  }
+  .footer-note {
+    margin-top: 40px;
+    padding: 18px 20px;
+    background: var(--panel);
+    border: 1px solid var(--panel-line);
+    border-radius: 10px;
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--cream-dim);
+  }
+  .footer-note b { color: var(--brass); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Condiment Reference</div>
+    <h1>Aioli Guide</h1>
+    <p class="sub">Base: mayo (Kirkland or Chosen Foods avocado oil). Mix, taste, adjust, refrigerate 30+ min before serving. Each batch ≈ 1/2 cup — scale up freely.</p>
+  </header>
+  <div class="disclaimer">Colors are Pantone-inspired flavor pairings, not certified Pantone matches</div>
+
+  <div class="section-label">Savory / Bold</div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">01</span><span class="name">Garlic Parmesan</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#F4EDE0"></div></div>
+    <div class="swatch-label"><b>Bone White</b> · #F4EDE0</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 tsp roasted garlic (or 1 clove fresh, minced)</li>
+      <li>2 tbsp grated parmesan</li>
+      <li>1 tsp lemon juice</li>
+    </ul>
+    <div class="note">Great with chicken chunks or as a dip for potato cubes.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">02</span><span class="name">Sriracha Lime</span></div>
+    <div class="swatch-row">
+      <div class="swatch-seg" style="background:#DA3E30"></div>
+      <div class="swatch-seg" style="background:#A8C23A"></div>
+    </div>
+    <div class="swatch-label"><b>Fiery Red</b> #DA3E30 + <b>Lime Punch</b> #A8C23A</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1–2 tbsp sriracha (to taste)</li>
+      <li>1 tbsp lime juice</li>
+      <li>1 tsp honey</li>
+    </ul>
+    <div class="note">You've already got sriracha and honey on hand — just need the mayo.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">03</span><span class="name">Chipotle Honey</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#B5651D"></div></div>
+    <div class="swatch-label"><b>Chipotle Amber</b> · #B5651D</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 tbsp chipotle in adobo, minced</li>
+      <li>1 tbsp honey</li>
+      <li>1 tsp lime juice</li>
+    </ul>
+    <div class="note">Smoky-sweet, great on tacos or drizzled over chicken.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">04</span><span class="name">Smoky Paprika</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#9B3922"></div></div>
+    <div class="swatch-label"><b>Chili Pepper</b> · #9B3922</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 tsp smoked paprika</li>
+      <li>1/2 tsp garlic powder</li>
+      <li>1 tsp vinegar (white or apple cider)</li>
+    </ul>
+    <div class="note">Closest DIY dupe to the Tari Rocoto flavor — good stopgap without the bottle.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">05</span><span class="name">Curry</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#E4A227"></div></div>
+    <div class="swatch-label"><b>Golden Spice</b> · #E4A227</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 tsp curry powder</li>
+      <li>1 tsp honey</li>
+    </ul>
+    <div class="note">Unexpectedly good with chicken and potatoes.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">06</span><span class="name">Buffalo</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#DD4124"></div></div>
+    <div class="swatch-label"><b>Fiesta</b> · #DD4124</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>2 tbsp Frank's RedHot</li>
+      <li>1 tsp melted butter</li>
+    </ul>
+    <div class="note">Dip for chicken chunks, or spread on a sandwich. Butter's already stocked.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">07</span><span class="name">Basil Pesto</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#4A5D23"></div></div>
+    <div class="swatch-label"><b>Basil</b> · #4A5D23</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>2 tbsp pesto (jarred or fresh-blended)</li>
+    </ul>
+    <div class="note">Good on sandwiches, or as a dip for pretzel nuggets if you're feeling experimental.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">08</span><span class="name">Everything Bagel</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#B08D57"></div></div>
+    <div class="swatch-label"><b>Toasted Sesame</b> · #B08D57</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 tbsp everything bagel seasoning</li>
+      <li>1 tsp lemon juice</li>
+    </ul>
+    <div class="note">No cooking required — great on eggs or a quick sandwich spread.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">09</span><span class="name">BBQ Ranch</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#8B4225"></div></div>
+    <div class="swatch-label"><b>Chestnut</b> · #8B4225</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>2 tbsp BBQ sauce</li>
+      <li>1/2 tsp ranch seasoning (dry packet or homemade blend)</li>
+    </ul>
+    <div class="note">Works as a dip or burger spread.</div>
+  </div>
+
+  <div class="section-label">Herbal / Bright</div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">10</span><span class="name">Classic Garlic Herb</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#9CAF88"></div></div>
+    <div class="swatch-label"><b>Sage</b> · #9CAF88</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 clove garlic, minced</li>
+      <li>1 tbsp fresh parsley, chopped</li>
+      <li>1 tsp chives, chopped</li>
+      <li>1 tsp lemon juice</li>
+    </ul>
+    <div class="note">All-purpose green aioli — good on almost anything.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">11</span><span class="name">Basil Lemon</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#6B8E23"></div></div>
+    <div class="swatch-label"><b>Fresh Basil</b> · #6B8E23</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>2 tbsp fresh basil, finely chopped or blended</li>
+      <li>1 tsp lemon zest</li>
+      <li>1/2 tsp garlic, minced</li>
+    </ul>
+    <div class="note">Bright, works on sandwiches or grilled chicken.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">12</span><span class="name">Dill & Lemon</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#A9BA6B"></div></div>
+    <div class="swatch-label"><b>Dill</b> · #A9BA6B</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 tbsp fresh or 1 tsp dried dill</li>
+      <li>1 tsp lemon juice</li>
+      <li>1/2 tsp garlic, minced</li>
+    </ul>
+    <div class="note">Classic with fish, also great with tuna.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">13</span><span class="name">Chive & Black Pepper</span></div>
+    <div class="swatch-row">
+      <div class="swatch-seg" style="background:#5B7B4E; flex:4;"></div>
+      <div class="swatch-seg" style="background:#2B2B2B; flex:1;"></div>
+    </div>
+    <div class="swatch-label"><b>Chive Green</b> #5B7B4E + <b>Pepper Fleck</b> #2B2B2B</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 tbsp fresh chives, chopped</li>
+      <li>1/2 tsp cracked black pepper</li>
+      <li>1 tsp lemon juice</li>
+    </ul>
+    <div class="note">Simple, clean flavor — good all-purpose option.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">14</span><span class="name">Cilantro Lime</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#7CB518"></div></div>
+    <div class="swatch-label"><b>Green Flash</b> · #7CB518</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>2 tbsp cilantro, chopped</li>
+      <li>1 tbsp lime juice</li>
+      <li>1/2 tsp garlic, minced</li>
+      <li>Pinch of cumin</li>
+    </ul>
+    <div class="note">Great with the fajita bowl or tuna poke bowl already in the main recipe file.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">15</span><span class="name">Rosemary Garlic</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#2E4636"></div></div>
+    <div class="swatch-label"><b>Rosemary</b> · #2E4636</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 tsp fresh rosemary, finely minced</li>
+      <li>1 tsp roasted garlic</li>
+    </ul>
+    <div class="note">Earthier profile, good with potatoes.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">16</span><span class="name">Tarragon</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#87A96B"></div></div>
+    <div class="swatch-label"><b>Tarragon</b> · #87A96B</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 tsp fresh tarragon, chopped</li>
+      <li>1 tsp white wine vinegar</li>
+      <li>1/2 tsp dijon mustard (if on hand)</li>
+    </ul>
+    <div class="note">French-leaning, great on chicken sandwiches.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">17</span><span class="name">Mint & Lemon</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#98D8C1"></div></div>
+    <div class="swatch-label"><b>Mint</b> · #98D8C1</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 tbsp fresh mint, chopped</li>
+      <li>1 tsp lemon juice</li>
+      <li>1/2 tsp garlic, minced</li>
+    </ul>
+    <div class="note">Unexpected but refreshing on grilled meats.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">18</span><span class="name">Herbes de Provence</span></div>
+    <div class="swatch-row">
+      <div class="swatch-seg" style="background:#8E9775"></div>
+      <div class="swatch-seg" style="background:#A89CC8"></div>
+    </div>
+    <div class="swatch-label"><b>Provence Herb</b> #8E9775 + <b>Lavender</b> #A89CC8</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 tsp herbes de Provence</li>
+      <li>1 tsp lemon zest</li>
+    </ul>
+    <div class="note">Earthy, floral — works on almost anything roasted.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">19</span><span class="name">Sage & Garlic</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#B2AC88"></div></div>
+    <div class="swatch-label"><b>Desert Sage</b> · #B2AC88</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 tsp fresh sage, finely chopped</li>
+      <li>1/2 tsp garlic, minced</li>
+      <li>Pinch of black pepper</li>
+    </ul>
+    <div class="note">Richer profile, good with potatoes or poultry.</div>
+  </div>
+
+
+  <div class="section-label">New Frontier — Pantry-Inspired</div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">20</span><span class="name">Harissa Aioli</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#A83232"></div></div>
+    <div class="swatch-label"><b>Harissa Red</b> · #A83232</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1-2 tbsp harissa (to taste)</li>
+      <li>1 tsp lemon juice</li>
+      <li>1/2 tsp garlic, minced (optional — harissa is already garlicky)</li>
+    </ul>
+    <div class="note">Confirmed go-to burger sauce. Scale the harissa up for more heat.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">21</span><span class="name">Chili Crisp Aioli</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#8B3A1A"></div></div>
+    <div class="swatch-label"><b>Chili Crisp Amber</b> · #8B3A1A</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1-2 tbsp Lao Gan Ma chili crisp (spoon in the crispy bits, not just the oil)</li>
+      <li>1 tsp rice vinegar</li>
+    </ul>
+    <div class="note">Crunchy, savory, a little numbing. Great on eggs, burgers, or as a dip for chicken chunks.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">22</span><span class="name">Ginger Scallion Aioli</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#6B8F3C"></div></div>
+    <div class="swatch-label"><b>Scallion Green</b> · #6B8F3C</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 tsp fresh ginger, finely grated</li>
+      <li>2 tbsp scallions, finely chopped</li>
+      <li>1 tsp rice vinegar</li>
+      <li>Pinch of salt</li>
+    </ul>
+    <div class="note">Bright and savory — excellent on chicken, or as a dip alongside the chicken chunks.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">23</span><span class="name">Ancho Aioli</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#8C3B2E"></div></div>
+    <div class="swatch-label"><b>Ancho Brick</b> · #8C3B2E</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 tsp ancho chile powder</li>
+      <li>1 tsp lime juice</li>
+      <li>Pinch of salt</li>
+    </ul>
+    <div class="note">Mild, earthy heat with a raisin-like sweetness. Good on tacos or burgers.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-top"><span class="num">24</span><span class="name">Preserved Lemon Aioli</span></div>
+    <div class="swatch-row"><div class="swatch-seg" style="background:#C9A227"></div></div>
+    <div class="swatch-label"><b>Preserved Lemon</b> · #C9A227</div>
+    <ul>
+      <li>1/2 cup mayo</li>
+      <li>1 tsp preserved lemon paste</li>
+      <li>1/2 tsp garlic, minced</li>
+    </ul>
+    <div class="note">Salty, tangy, a little funky in the best way. Great on sandwiches or with fish.</div>
+  </div>
+
+  <div class="card" style="border-style:dashed;">
+    <div class="card-top"><span class="num">☆</span><span class="name">Shortcut: Tari Cheat Aioli</span></div>
+    <div class="swatch-row">
+      <div class="swatch-seg" style="background:#E3A857"></div>
+      <div class="swatch-seg" style="background:#B5502E"></div>
+    </div>
+    <div class="swatch-label"><b>Aji Amarillo</b> #E3A857 + <b>Aji Rocoto</b> #B5502E</div>
+    <ul>
+      <li>No recipe needed — stir either Tari sauce directly into mayo, 1:1 to taste.</li>
+    </ul>
+    <div class="note">Aji Amarillo: bright, fruity, mild. Aji Rocoto: smoky, bolder. Instant aioli from bottles already in rotation.</div>
+  </div>
+
+  <div class="footer-note">
+    <b>Best fits right now:</b> Sriracha Lime, Smoky Paprika, Cilantro Lime, and Harissa — confirmed go-to for burgers.<br><br>
+    <b>Mayo is secured</b> — both Kewpie and Duke's are in the current cart. Still on the list: a good deli cheese.
+  </div>
+
+</div>
+</body>
 </html>

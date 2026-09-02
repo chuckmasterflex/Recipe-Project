@@ -1,74 +1,271 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#14100E" />
-    <title>L.B.J.'s Chili — The Recipe Hub</title>
-    <style>
-      :root {
-        --bg: #14100e;
-        --panel: #1f1917;
-        --line: #3d322e;
-        --cream: #f2eae2;
-        --dim: #a99c93;
-        --red: #c8452f;
-        --gold: #8C3A2B;
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--cream);
-        font-family: -apple-system, system-ui, sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 24px;
-      }
-      main {
-        max-width: 440px;
-        text-align: center;
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-top: 3px solid var(--gold);
-        border-radius: 10px;
-        padding: 32px 28px;
-      }
-      .icon {
-        width: 44px;
-        height: 44px;
-        margin: 0 auto 16px;
-        border-radius: 8px;
-        background: var(--gold);
-        color: var(--bg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 18px;
-      }
-      h1 { font-size: 19px; margin: 0 0 8px; }
-      p { color: var(--dim); line-height: 1.6; font-size: 14px; margin: 0 0 20px; }
-      .note {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: var(--red);
-        margin-bottom: 20px;
-      }
-      a { color: var(--gold); text-decoration: none; font-size: 13px; }
-      a:hover { text-decoration: underline; }
-    </style>
-  </head>
-  <body>
-    <main>
-      <div class="icon">L</div>
-      <div class="note">Guide pending</div>
-      <h1>L.B.J.'s Chili</h1>
-      <p>Heritage card transcription, Zephyr Wright history, Instant Pot variant. This standalone guide hasn't been added to the repo yet — drop the real lbj-chili.html into /public and it replaces this placeholder, no code changes needed.</p>
-      <a href="./index.html">← Back to the Recipe Hub</a>
-    </main>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L.B.J.'s Chili</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #F4EFE3;
+    --paper2: #EBE3D2;
+    --rule: #C8BCA3;
+    --ink: #2B2620;
+    --ink-soft: #6B6053;
+    --red: #8C3A2B;
+    --red-soft: #B5674F;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: #1A1713;
+    color: var(--ink);
+    font-family: 'Crimson Text', Georgia, serif;
+    padding: 24px 14px 60px;
+  }
+  .sheet {
+    max-width: 620px;
+    margin: 0 auto;
+    background: var(--paper);
+    border-radius: 3px;
+    padding: 38px 30px 34px;
+    box-shadow: 0 18px 50px rgba(0,0,0,.55);
+    position: relative;
+  }
+  .sheet::before {
+    content: "";
+    position: absolute;
+    inset: 10px;
+    border: 1px solid var(--rule);
+    pointer-events: none;
+    opacity: .55;
+  }
+
+  header { text-align: center; margin-bottom: 6px; }
+  .eyebrow {
+    font-family: 'Courier Prime', monospace;
+    font-size: 10px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--red-soft);
+    margin-bottom: 14px;
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 46px;
+    margin: 0 0 4px;
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  .alt-name {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--red);
+    margin-bottom: 16px;
+  }
+  .provenance {
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    font-style: italic;
+    max-width: 430px;
+    margin: 0 auto;
+  }
+
+  .rule-orn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 30px 0 22px;
+  }
+  .rule-orn::before, .rule-orn::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--rule);
+  }
+  .rule-orn span {
+    font-family: 'Courier Prime', monospace;
+    font-size: 9.5px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--red-soft);
+  }
+
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 26px;
+    flex-wrap: wrap;
+    font-family: 'Courier Prime', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-bottom: 4px;
+  }
+  .stats b { display: block; color: var(--ink); font-size: 13px; margin-top: 2px; letter-spacing: .02em; }
+  .stat { text-align: center; }
+
+  ul.ing { list-style: none; padding: 0; margin: 0; }
+  ul.ing li {
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 7px 0 7px 24px;
+    border-bottom: 1px dotted var(--rule);
+    position: relative;
+  }
+  ul.ing li:last-child { border-bottom: none; }
+  ul.ing li::before {
+    content: "▪";
+    position: absolute;
+    left: 4px;
+    color: var(--red-soft);
+    font-size: 11px;
+    top: 10px;
+  }
+  ul.ing .amt { font-family: 'Courier Prime', monospace; font-size: 13.5px; font-weight: 700; color: var(--red); margin-right: 4px; }
+
+  ol.method { padding-left: 20px; margin: 0; font-size: 16px; line-height: 1.75; }
+  ol.method li { margin-bottom: 10px; padding-left: 4px; }
+  ol.method::marker { color: var(--red); }
+
+  .callout {
+    background: var(--paper2);
+    border-left: 3px solid var(--red-soft);
+    padding: 14px 16px;
+    margin: 22px 0 0;
+    font-size: 14.5px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+  }
+  .callout b { color: var(--ink); font-style: normal; }
+  .callout-title {
+    font-family: 'Courier Prime', monospace;
+    font-size: 9.5px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 6px;
+  }
+
+  .history { font-size: 15px; line-height: 1.75; color: var(--ink); }
+  .history p { margin: 0 0 13px; }
+  .history p:last-child { margin-bottom: 0; }
+  .history em { color: var(--red); font-style: italic; }
+
+  .footer {
+    text-align: center;
+    margin-top: 32px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    font-family: 'Courier Prime', monospace;
+    font-size: 10.5px;
+    line-height: 1.8;
+    color: var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <div class="eyebrow">From the family recipe box</div>
+    <h1>L.B.J.'s Chili</h1>
+    <div class="alt-name">Pedernales River Chili</div>
+    <p class="provenance">Transcribed from a handwritten card. Serves 8–10 — no beans, as Texas intends.</p>
+  </header>
+
+  <div class="stats">
+    <div class="stat">Meat<b>4 lbs</b></div>
+    <div class="stat">Simmer<b>1 hour</b></div>
+    <div class="stat">Serves<b>8–10</b></div>
+    <div class="stat">Vessel<b>One pot</b></div>
+  </div>
+
+  <div class="rule-orn"><span>Ingredients</span></div>
+
+  <ul class="ing">
+    <li><span class="amt">4 lbs</span> beef or venison, cubed or coarsely ground</li>
+    <li><span class="amt">1 lg</span> onion, chopped</li>
+    <li><span class="amt">2</span> cloves garlic, crushed</li>
+    <li><span class="amt">1 tsp</span> oregano, crushed</li>
+    <li><span class="amt">1 tsp</span> cumin seed</li>
+    <li><span class="amt">2 Tbsp</span> chili powder</li>
+    <li><span class="amt">2 cans</span> Rotel canned tomatoes and green chilies</li>
+    <li><span class="amt">2 c.</span> water</li>
+    <li><span class="amt">1 tsp</span> salt</li>
+    <li><span class="amt">—</span> cayenne pepper, to taste</li>
+    <li><span class="amt">—</span> hot pepper sauce, to taste <em style="color:var(--ink-soft);font-size:13.5px;">(called for in the method, not listed on the card)</em></li>
+  </ul>
+
+  <div class="rule-orn"><span>Method</span></div>
+
+  <ol class="method">
+    <li>Sear the meat in a large, dry skillet until lightly brown.</li>
+    <li>Add the onion and garlic; sauté.</li>
+    <li>Add the seasonings, tomatoes, water, and hot pepper sauce. Bring the mixture to a boil.</li>
+    <li>Reduce heat and simmer about one hour, skimming off any fat that accumulates.</li>
+  </ol>
+
+  <div class="callout">
+    <div class="callout-title">Note on the card</div>
+    The written steps call for hot pepper sauce, but only cayenne appears in the ingredient list — <b>the card wants both.</b> Cayenne goes in with the dry seasonings; the hot sauce goes in with the liquid. Use either or both to taste.
+  </div>
+
+  <div class="callout">
+    <div class="callout-title">Technique</div>
+    <b>Dry skillet</b> is deliberate — no oil. Four pounds of beef renders plenty of its own fat, which is exactly why the last step tells you to skim. Some cooks chill the pot overnight and lift the congealed fat off the top the next morning, which works even better and lets the chili sit and improve.
+  </div>
+
+  <div class="rule-orn"><span>Where it came from</span></div>
+
+  <div class="history">
+    <p>The name comes from the Pedernales River, which runs through the Johnson family ranch in the Texas Hill Country. The chili was served regularly at the ranch and at the White House during Lyndon Johnson's presidency.</p>
+
+    <p>The recipe itself was <em>Zephyr Wright's</em> — the cook who worked for the Johnson family for twenty-one years. When the Johnsons' French chef quit over their preference for homey food, they promoted Wright rather than hire a replacement. The cards that went out into the world said "Lady Bird Johnson's Pedernales Chili," but the recipe was Wright's, and it's worth saying so.</p>
+
+    <p>So many people wrote in asking for it that the White House had it printed on cards and mailed them out by the thousands. Lady Bird once remarked that the recipe had been nearly as popular as the government pamphlet on the care and feeding of children.</p>
+
+    <p>Two details on your card confirm it's the real lineage. <em>"Beef or venison"</em> — Johnson reportedly preferred his made with venison. And <em>Rotel</em>: Lady Bird admitted in 1963 that the canned tomatoes and green chilies were the secret ingredient, the thing that gave it the flavor people kept writing in about.</p>
+  </div>
+
+  <div class="rule-orn"><span>Modern Variant</span></div>
+
+  <div class="alt-name" style="text-align:center;font-size:20px;margin-bottom:4px;">Instant Pot Version</div>
+  <p class="provenance" style="margin-bottom:18px;">Same card, same Rotel, same dry sear — swapping the hour of simmering for pressure. Roughly 30 minutes total instead of 60+.</p>
+
+  <div class="stats" style="margin-bottom:22px;">
+    <div class="stat">Sauté<b>~10 min</b></div>
+    <div class="stat">Pressure<b>10–20 min</b></div>
+    <div class="stat">Release<b>Natural, 10 min</b></div>
+  </div>
+
+  <ol class="method">
+    <li><b>Sauté mode, no oil</b> — same dry-sear instinct as the card. Brown the meat in batches so it doesn't steam, about 8–10 minutes total.</li>
+    <li>Add the onion and garlic, sauté a couple minutes until fragrant. Deglaze with a splash of the water, scraping up anything stuck to the bottom — this also prevents a burn warning when it comes up to pressure.</li>
+    <li>Add everything else: oregano, cumin, chili powder, both cans of Rotel, remaining water, salt, cayenne, hot sauce.</li>
+    <li>Seal the lid. Pressure cook on High:
+      <ul class="ing" style="margin-top:8px;">
+        <li><span class="amt">10–15 min</span> if using coarsely ground meat</li>
+        <li><span class="amt">18–20 min</span> if using cubed beef or venison</li>
+      </ul>
+    </li>
+    <li>Natural release 10 minutes, then quick-release the rest. Skim any fat off the top before serving — same finishing step as the original, just less fat to skim since pressure cooking renders less than an hour of open simmering does.</li>
+  </ol>
+
+  <div class="callout">
+    <div class="callout-title">What stays the same / what changes</div>
+    Rotel, the dry sear, the spice blend, and the skim-the-fat finish all carry over untouched. What changes is time — roughly 20 minutes of active pressure instead of an hour of simmering. Cubed meat actually benefits more from this swap than ground: an hour on the stove barely breaks down chuck-style cubes, while 20 minutes under pressure does it properly.
+  </div>
+
+  <div class="footer">
+    Transcribed from a handwritten card · childhood recipe<br>
+    Historical notes verified against the LBJ Library record, Saveur, and the Culinary Historians of Chicago
+  </div>
+
+</div>
+</body>
 </html>

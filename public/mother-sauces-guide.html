@@ -1,74 +1,655 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#14100E" />
-    <title>The Five Mother Sauces — The Recipe Hub</title>
-    <style>
-      :root {
-        --bg: #14100e;
-        --panel: #1f1917;
-        --line: #3d322e;
-        --cream: #f2eae2;
-        --dim: #a99c93;
-        --red: #c8452f;
-        --gold: #C6A15B;
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--cream);
-        font-family: -apple-system, system-ui, sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 24px;
-      }
-      main {
-        max-width: 440px;
-        text-align: center;
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-top: 3px solid var(--gold);
-        border-radius: 10px;
-        padding: 32px 28px;
-      }
-      .icon {
-        width: 44px;
-        height: 44px;
-        margin: 0 auto 16px;
-        border-radius: 8px;
-        background: var(--gold);
-        color: var(--bg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 18px;
-      }
-      h1 { font-size: 19px; margin: 0 0 8px; }
-      p { color: var(--dim); line-height: 1.6; font-size: 14px; margin: 0 0 20px; }
-      .note {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: var(--red);
-        margin-bottom: 20px;
-      }
-      a { color: var(--gold); text-decoration: none; font-size: 13px; }
-      a:hover { text-decoration: underline; }
-    </style>
-  </head>
-  <body>
-    <main>
-      <div class="icon">M</div>
-      <div class="note">Guide pending</div>
-      <h1>The Five Mother Sauces</h1>
-      <p>Technique reference, derivatives, knife cuts at true scale, FCA video links. This standalone guide hasn't been added to the repo yet — drop the real mother-sauces-guide.html into /public and it replaces this placeholder, no code changes needed.</p>
-      <a href="./index.html">← Back to the Recipe Hub</a>
-    </main>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Five Mother Sauces</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1B1210;
+    --panel: #271A17;
+    --panel2: #2F201C;
+    --line: #4A342C;
+    --cream: #F1E6D6;
+    --cream-dim: #C9B7A3;
+    --brass: #C6A15B;
+
+    --bechamel: #EDE6D6;
+    --veloute: #D9C079;
+    --espagnole: #B5613E;
+    --tomate: #C2503B;
+    --hollandaise: #E3A93C;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    padding-bottom: 70px;
+  }
+  .wrap { max-width: 680px; margin: 0 auto; padding: 34px 18px 0; }
+
+  header { text-align: center; margin-bottom: 26px; }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 12px;
+  }
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 1.05;
+    margin: 0 0 10px;
+  }
+  h1 em { font-style: italic; color: var(--brass); }
+  .sub {
+    font-size: 14px;
+    color: var(--cream-dim);
+    line-height: 1.6;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* Timeline */
+  .timeline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    margin: 30px 0 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+  }
+  .tl-node { text-align: center; flex: 1; max-width: 140px; }
+  .tl-year { color: var(--brass); font-weight: 500; }
+  .tl-label { color: var(--cream-dim); font-size: 10.5px; margin-top: 3px; line-height: 1.4; }
+  .tl-line { flex: 1; height: 1px; background: var(--line); margin: 0 -4px; position: relative; top: -14px; max-width: 60px; }
+
+  .section-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin: 46px 0 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  /* Accordion */
+  details.card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--accent, var(--brass));
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+  summary.card-head {
+    list-style: none;
+    cursor: pointer;
+    padding: 16px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  summary.card-head::-webkit-details-marker { display: none; }
+  .head-left { display: flex; flex-direction: column; gap: 4px; }
+  .head-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--cream);
+  }
+  .head-name .fr { font-style: italic; color: var(--accent, var(--brass)); font-weight: 500; font-size: 15px; margin-left: 8px; }
+  .head-formula {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--cream-dim);
+  }
+  .chevron {
+    font-size: 18px;
+    color: var(--accent, var(--brass));
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+  }
+  details[open] .chevron { transform: rotate(45deg); }
+
+  .card-body { padding: 0 18px 20px; }
+  .body-divider { height: 1px; background: var(--line); margin: 0 0 16px; }
+
+  .tech-block { margin-bottom: 16px; }
+  .tech-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent, var(--brass));
+    margin-bottom: 8px;
+  }
+  .tech-block p, .tech-block ol {
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: var(--cream);
+    margin: 0;
+    padding-left: 0;
+  }
+  .tech-block ol { padding-left: 18px; }
+  .tech-block li { margin-bottom: 4px; }
+
+  .stat-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+  }
+  .stat-chip {
+    background: var(--panel2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--cream-dim);
+  }
+  .stat-chip b { color: var(--cream); display: block; font-size: 12.5px; margin-bottom: 2px; }
+
+  .pill-row { display: flex; flex-wrap: wrap; gap: 7px; }
+  .pill {
+    font-size: 12px;
+    padding: 5px 11px;
+    border-radius: 100px;
+    background: var(--accent, var(--brass));
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .pill.outline {
+    background: transparent;
+    border: 1px dashed var(--line);
+    color: var(--cream-dim);
+    font-weight: 400;
+  }
+
+  /* Glossary */
+
+  /* Video link buttons */
+  .vid-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+  a.vid {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12.5px;
+    text-decoration: none;
+    color: var(--cream);
+    background: var(--panel2);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 8px 12px;
+    transition: border-color 0.15s ease, background 0.15s ease;
+  }
+  a.vid:hover, a.vid:focus-visible { border-color: var(--accent, var(--brass)); background: #38271F; }
+  a.vid .play {
+    width: 0; height: 0;
+    border-left: 8px solid var(--accent, var(--brass));
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    flex-shrink: 0;
+  }
+  a.vid .vlabel { line-height: 1.3; }
+  a.vid .vsub {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9.5px;
+    color: var(--cream-dim);
+    margin-top: 2px;
+    letter-spacing: 0.04em;
+  }
+
+  /* Knife cuts */
+  .cuts-intro { font-size: 13.5px; line-height: 1.7; color: var(--cream-dim); margin: 0 0 18px; }
+  .cut-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 15px 16px;
+    margin-bottom: 11px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+  }
+  .cut-viz { flex-shrink: 0; width: 74px; }
+  .cut-info { flex: 1; min-width: 0; }
+  .cut-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: var(--cream);
+    margin-bottom: 2px;
+  }
+  .cut-dim {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10.5px;
+    color: var(--brass);
+    margin-bottom: 6px;
+  }
+  .cut-use { font-size: 12.5px; line-height: 1.6; color: var(--cream-dim); }
+  .scale-note {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--cream-dim);
+    text-align: center;
+    margin: 14px 0 20px;
+    opacity: 0.8;
+  }
+  .channel-box {
+    background: linear-gradient(135deg, #2F201C, #271A17);
+    border: 1px solid var(--brass);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin: 34px 0 0;
+  }
+  .channel-box .cb-eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brass);
+    margin-bottom: 8px;
+  }
+  .channel-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 23px; margin: 0 0 8px; }
+  .channel-box p { font-size: 13px; line-height: 1.65; color: var(--cream-dim); margin: 0 0 12px; }
+  .channel-box a.main-link {
+    display: inline-block;
+    background: var(--brass);
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    padding: 9px 16px;
+    border-radius: 6px;
+  }
+
+  .glossary {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 44px;
+  }
+  .glossary h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    margin: 0 0 14px;
+    color: var(--brass);
+  }
+  .g-item { margin-bottom: 12px; font-size: 13px; line-height: 1.6; }
+  .g-item b { color: var(--cream); font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+  .g-item span { color: var(--cream-dim); }
+
+  .footer-note {
+    margin-top: 20px;
+    font-size: 12.5px;
+    color: var(--cream-dim);
+    line-height: 1.7;
+    text-align: center;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">Technique Reference</div>
+    <h1>The Five<br><em>Mother Sauces</em></h1>
+    <p class="sub">Every classical French sauce traces back to one of five bases. Learn the mother, and the daughters come almost for free. Tap a sauce to open it up.</p>
+  </header>
+
+  <div class="timeline">
+    <div class="tl-node">
+      <div class="tl-year">1833</div>
+      <div class="tl-label">Carême codifies four: béchamel, velouté, espagnole, allemande</div>
+    </div>
+    <div class="tl-line"></div>
+    <div class="tl-node">
+      <div class="tl-year">1903–07</div>
+      <div class="tl-label">Escoffier demotes allemande to a velouté derivative, adds tomate + hollandaise</div>
+    </div>
+  </div>
+
+  <div class="section-label">The Five</div>
+
+  <!-- BÉCHAMEL -->
+  <details class="card" style="--accent:var(--bechamel)">
+    <summary class="card-head">
+      <div class="head-left">
+        <div class="head-name">Béchamel <span class="fr">sauce blanche</span></div>
+        <div class="head-formula">white roux + milk</div>
+      </div>
+      <div class="chevron">+</div>
+    </summary>
+    <div class="card-body">
+      <div class="body-divider"></div>
+      <div class="stat-row">
+        <div class="stat-chip"><b>Roux ratio</b>1:1 butter : flour</div>
+        <div class="stat-chip"><b>Difficulty</b>Easiest of the five</div>
+        <div class="stat-chip"><b>Time</b>~15 min</div>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Technique</div>
+        <ol>
+          <li>Melt butter, whisk in equal parts flour, cook 1–2 min <b>without coloring</b> — this is a white roux.</li>
+          <li>Gradually whisk in warm milk to avoid lumps.</li>
+          <li>Simmer 10 min, stirring often.</li>
+          <li>Season with salt, white pepper, and a pinch of nutmeg. Add an onion piqué (onion studded with a clove, tucked in with a bay leaf) while it simmers, then remove before serving.</li>
+        </ol>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Common Derivatives</div>
+        <div class="pill-row">
+          <span class="pill">Mornay — + gruyère &amp; parmesan</span>
+          <span class="pill">Soubise — + onion purée</span>
+          <span class="pill">Cream Sauce — + extra cream</span>
+        </div>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Uncommon Derivatives</div>
+        <div class="pill-row">
+          <span class="pill outline">Nantua — + crayfish butter, cream</span>
+          <span class="pill outline">Mustard Sauce — + dijon</span>
+        </div>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Watch — French Cooking Academy</div>
+        <div class="vid-row"><a class="vid" href="https://www.youtube.com/watch?v=X0-YKTKaYAE" target="_blank" rel="noopener"><span class="play"></span><span class="vlabel">Béchamel: Theory Explained<span class="vsub">direct video</span></span></a><a class="vid" href="https://www.youtube.com/watch?v=Z9VuId7hz4I" target="_blank" rel="noopener"><span class="play"></span><span class="vlabel">Thick Béchamel<span class="vsub">direct video</span></span></a><a class="vid" href="https://www.thefrenchcookingacademy.com/recipes/bechamel-sauce-basics" target="_blank" rel="noopener"><span class="play"></span><span class="vlabel">Béchamel Basics + 5 thicknesses<span class="vsub">written recipe</span></span></a></div>
+      </div>
+    </div>
+  </details>
+
+  <!-- VELOUTÉ -->
+  <details class="card" style="--accent:var(--veloute)">
+    <summary class="card-head">
+      <div class="head-left">
+        <div class="head-name">Velouté <span class="fr">sauce blonde</span></div>
+        <div class="head-formula">blonde roux + white stock</div>
+      </div>
+      <div class="chevron">+</div>
+    </summary>
+    <div class="card-body">
+      <div class="body-divider"></div>
+      <div class="stat-row">
+        <div class="stat-chip"><b>Roux ratio</b>1:1 butter : flour</div>
+        <div class="stat-chip"><b>Stock</b>Chicken, veal, or fish</div>
+        <div class="stat-chip"><b>Time</b>~30 min</div>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Technique</div>
+        <ol>
+          <li>Cook the roux slightly longer than béchamel's, to a pale gold ("blonde") stage.</li>
+          <li>Gradually whisk in warm white stock — match the stock to the dish (chicken for poultry, fish for seafood).</li>
+          <li>Simmer 20–30 min, skimming impurities that rise to the surface.</li>
+          <li>Strain for a silkier finish.</li>
+        </ol>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Common Derivatives</div>
+        <div class="pill-row">
+          <span class="pill">Suprême — + cream, mushroom</span>
+          <span class="pill">Allemande — + egg yolk, cream, lemon</span>
+          <span class="pill">Bercy — + white wine, shallots</span>
+        </div>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Uncommon Derivatives</div>
+        <div class="pill-row">
+          <span class="pill outline">Normande — + cream, mushroom essence</span>
+          <span class="pill outline">Hongroise — + paprika, onion</span>
+        </div>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Trivia</div>
+        <p>Allemande used to be one of Carême's original four mother sauces. Escoffier later reclassified it as a velouté derivative — a demotion, technically, but it still shows up constantly.</p>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Watch — French Cooking Academy</div>
+        <div class="vid-row"><a class="vid" href="https://www.youtube.com/@FrenchCookingAcademy/search?query=velout%C3%A9" target="_blank" rel="noopener"><span class="play"></span><span class="vlabel">Velouté lessons<span class="vsub">channel search</span></span></a><a class="vid" href="https://www.youtube.com/@FrenchCookingAcademy/search?query=chicken%20stock" target="_blank" rel="noopener"><span class="play"></span><span class="vlabel">Fonds Blanc / white stock<span class="vsub">channel search</span></span></a></div>
+      </div>
+
+    </div>
+  </details>
+
+  <!-- ESPAGNOLE -->
+  <details class="card" style="--accent:var(--espagnole)">
+    <summary class="card-head">
+      <div class="head-left">
+        <div class="head-name">Espagnole <span class="fr">sauce brune</span></div>
+        <div class="head-formula">brown roux + brown stock + tomato</div>
+      </div>
+      <div class="chevron">+</div>
+    </summary>
+    <div class="card-body">
+      <div class="body-divider"></div>
+      <div class="stat-row">
+        <div class="stat-chip"><b>Roux</b>Cooked deep brown, nutty</div>
+        <div class="stat-chip"><b>Stock</b>Veal or beef</div>
+        <div class="stat-chip"><b>Time</b>1+ hour</div>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Technique</div>
+        <ol>
+          <li>Cook the roux to a deep brown — right up to the edge of burning, without crossing it. This is the "Sunday project" sauce.</li>
+          <li>Whisk in brown stock gradually along with a mirepoix (diced onion, carrot, celery) and tomato purée.</li>
+          <li>Simmer at least an hour, skimming frequently.</li>
+          <li>Strain for a clean, glossy sauce.</li>
+        </ol>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Common Derivatives</div>
+        <div class="pill-row">
+          <span class="pill">Demi-Glace — 1:1 with stock, reduced, splash of sherry</span>
+          <span class="pill">Bordelaise — + red wine, shallots, bone marrow</span>
+          <span class="pill">Chasseur — + mushrooms, shallots, white wine</span>
+        </div>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Uncommon Derivatives</div>
+        <div class="pill-row">
+          <span class="pill outline">Robert — + onion, white wine, mustard</span>
+          <span class="pill outline">Charcutière — Robert + gherkins</span>
+          <span class="pill outline">Lyonnaise — + onions, vinegar reduction</span>
+        </div>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Watch — French Cooking Academy</div>
+        <div class="vid-row"><a class="vid" href="https://www.youtube.com/@FrenchCookingAcademy/search?query=sauce%20espagnole" target="_blank" rel="noopener"><span class="play"></span><span class="vlabel">Sauce Espagnole<span class="vsub">channel search</span></span></a><a class="vid" href="https://www.youtube.com/@FrenchCookingAcademy/search?query=demi%20glace" target="_blank" rel="noopener"><span class="play"></span><span class="vlabel">Demi-Glace & Jus<span class="vsub">channel search</span></span></a></div>
+      </div>
+    </div>
+  </details>
+
+  <!-- TOMATE -->
+  <details class="card" style="--accent:var(--tomate)">
+    <summary class="card-head">
+      <div class="head-left">
+        <div class="head-name">Tomate <span class="fr">sauce tomate</span></div>
+        <div class="head-formula">roux (or reduction) + tomato</div>
+      </div>
+      <div class="chevron">+</div>
+    </summary>
+    <div class="card-body">
+      <div class="body-divider"></div>
+      <div class="stat-row">
+        <div class="stat-chip"><b>Two paths</b>Roux-based or roux-free</div>
+        <div class="stat-chip"><b>Time</b>30–45 min</div>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Technique</div>
+        <ol>
+          <li><b>Classic French route:</b> light roux, tomatoes, mirepoix, and a bit of pork or bacon for richness, simmered until thick.</li>
+          <li><b>Italian route (more common today):</b> skip the roux entirely — just reduce tomatoes with aromatics over medium-low heat until thick and concentrated.</li>
+          <li>Season with salt, a touch of sugar to balance acidity, and finish with olive oil or butter off heat.</li>
+        </ol>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Common Derivatives</div>
+        <div class="pill-row">
+          <span class="pill">Provençale — + garlic, herbs, olive oil</span>
+          <span class="pill">Creole — + peppers, onion, celery</span>
+          <span class="pill">Portugaise — + onion, garlic, tomato concassé</span>
+        </div>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Uncommon Derivatives</div>
+        <div class="pill-row">
+          <span class="pill outline">Spanish Sauce — + peppers, ham</span>
+        </div>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Watch — French Cooking Academy</div>
+        <div class="vid-row"><a class="vid" href="https://www.youtube.com/@FrenchCookingAcademy/search?query=tomato%20sauce" target="_blank" rel="noopener"><span class="play"></span><span class="vlabel">Classic Tomato Sauce<span class="vsub">channel search</span></span></a><a class="vid" href="https://www.youtube.com/@FrenchCookingAcademy/search?query=concass%C3%A9" target="_blank" rel="noopener"><span class="play"></span><span class="vlabel">Concassé de Tomates<span class="vsub">channel search</span></span></a></div>
+      </div>
+    </div>
+  </details>
+
+  <!-- HOLLANDAISE -->
+  <details class="card" style="--accent:var(--hollandaise)" open>
+    <summary class="card-head">
+      <div class="head-left">
+        <div class="head-name">Hollandaise <span class="fr">sauce hollandaise</span></div>
+        <div class="head-formula">egg yolk + clarified butter + acid</div>
+      </div>
+      <div class="chevron">+</div>
+    </summary>
+    <div class="card-body">
+      <div class="body-divider"></div>
+      <div class="stat-row">
+        <div class="stat-chip"><b>Yolk capacity</b>~8 oz butter / yolk max</div>
+        <div class="stat-chip"><b>Ideal yolk temp</b>150–155°F</div>
+        <div class="stat-chip"><b>Failure risk</b>Breaks easiest of the five</div>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Technique</div>
+        <ol>
+          <li>Whisk yolks + 1 tbsp cold water over a double boiler (barely simmering, bowl not touching water) until pale, thick, and ribbon-y — the sabayon stage.</li>
+          <li>Remove from heat. Add melted, slightly cooled butter <b>drop by drop</b>, whisking fully between each addition, until the emulsion visibly "grabs."</li>
+          <li>Once it's holding, switch to a thin, steady stream, whisking continuously until all butter is in.</li>
+          <li>Finish with lemon juice, salt, and a pinch of cayenne.</li>
+        </ol>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Common Derivatives</div>
+        <div class="pill-row">
+          <span class="pill">Béarnaise — tarragon-shallot-vinegar reduction instead of lemon</span>
+          <span class="pill">Mousseline — + whipped cream, folded in</span>
+          <span class="pill">Maltaise — + blood orange juice &amp; zest</span>
+        </div>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Uncommon Derivatives</div>
+        <div class="pill-row">
+          <span class="pill outline">Choron — béarnaise + tomato paste</span>
+          <span class="pill outline">Noisette — made with brown butter (beurre noisette)</span>
+          <span class="pill outline">Paloise — béarnaise, mint instead of tarragon</span>
+          <span class="pill outline">Moutarde — + dijon mustard</span>
+        </div>
+      </div>
+      <div class="tech-block">
+        <div class="tech-title">Watch — French Cooking Academy</div>
+        <div class="vid-row"><a class="vid" href="https://www.youtube.com/watch?v=7DnSMgo_UdU" target="_blank" rel="noopener"><span class="play"></span><span class="vlabel">Foolproof Hollandaise (5 min)<span class="vsub">direct video</span></span></a><a class="vid" href="https://www.youtube.com/@FrenchCookingAcademy/search?query=b%C3%A9arnaise" target="_blank" rel="noopener"><span class="play"></span><span class="vlabel">Sauce Béarnaise<span class="vsub">channel search</span></span></a></div>
+      </div>
+    </div>
+  </details>
+
+
+  <div class="section-label">Knife Cuts</div>
+  <p class="cuts-intro">The cuts below are drawn to <b>true relative scale</b> — each tile represents the same 20&nbsp;mm square, so you can see how much finer a brunoise really is than a mirepoix. Uniform size isn't fussiness: recipe timings assume it, and mismatched pieces cook at different rates.</p>
+
+  <div class="cut-card">
+    <div class="cut-viz"><svg viewBox="0 0 74 74" width="74" height="74" role="img"><rect x="0" y="0" width="74" height="74" fill="#1B1210" stroke="#4A342C" rx="4"/><rect x="5" y="5" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="5" y="16" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="5" y="27" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="5" y="38" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="5" y="49" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="5" y="60" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="16" y="5" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="16" y="16" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="16" y="27" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="16" y="38" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="16" y="49" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="16" y="60" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="27" y="5" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="27" y="16" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="27" y="27" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="27" y="38" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="27" y="49" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="27" y="60" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="38" y="5" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="38" y="16" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="38" y="27" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="38" y="38" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="38" y="49" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="38" y="60" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="49" y="5" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="49" y="16" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="49" y="27" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="49" y="38" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="49" y="49" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="49" y="60" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="60" y="5" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="60" y="16" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="60" y="27" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="60" y="38" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="60" y="49" width="7.4" height="7.4" fill="#C6A15B" rx="1"/><rect x="60" y="60" width="7.4" height="7.4" fill="#C6A15B" rx="1"/></svg></div>
+    <div class="cut-info">
+      <div class="cut-name">Brunoise</div>
+      <div class="cut-dim">2 mm cubes</div>
+      <div class="cut-use">The finest dice, cut from julienne. Garnish work and refined sauces — where you want the vegetable present but nearly invisible.</div>
+    </div>
+  </div>
+
+  <div class="cut-card">
+    <div class="cut-viz"><svg viewBox="0 0 74 74" width="74" height="74" role="img"><rect x="0" y="0" width="74" height="74" fill="#1B1210" stroke="#4A342C" rx="4"/><rect x="5" y="5" width="18.5" height="18.5" fill="#D9C079" rx="1.5"/><rect x="5" y="27" width="18.5" height="18.5" fill="#D9C079" rx="1.5"/><rect x="5" y="49" width="18.5" height="18.5" fill="#D9C079" rx="1.5"/><rect x="27" y="5" width="18.5" height="18.5" fill="#D9C079" rx="1.5"/><rect x="27" y="27" width="18.5" height="18.5" fill="#D9C079" rx="1.5"/><rect x="27" y="49" width="18.5" height="18.5" fill="#D9C079" rx="1.5"/><rect x="49" y="5" width="18.5" height="18.5" fill="#D9C079" rx="1.5"/><rect x="49" y="27" width="18.5" height="18.5" fill="#D9C079" rx="1.5"/><rect x="49" y="49" width="18.5" height="18.5" fill="#D9C079" rx="1.5"/></svg></div>
+    <div class="cut-info">
+      <div class="cut-name">Macédoine</div>
+      <div class="cut-dim">5 mm cubes</div>
+      <div class="cut-use">Small dice you actually eat as part of the dish rather than strain out. Vegetable salads, garnishes with texture.</div>
+    </div>
+  </div>
+
+  <div class="cut-card">
+    <div class="cut-viz"><svg viewBox="0 0 74 74" width="74" height="74" role="img"><rect x="0" y="0" width="74" height="74" fill="#1B1210" stroke="#4A342C" rx="4"/><rect x="6" y="4" width="7.4" height="66" fill="#B5613E" rx="1"/><rect x="19" y="4" width="7.4" height="66" fill="#B5613E" rx="1"/><rect x="32" y="4" width="7.4" height="66" fill="#B5613E" rx="1"/><rect x="45" y="4" width="7.4" height="66" fill="#B5613E" rx="1"/><rect x="58" y="4" width="7.4" height="66" fill="#B5613E" rx="1"/></svg></div>
+    <div class="cut-info">
+      <div class="cut-name">Julienne</div>
+      <div class="cut-dim">2 mm × ~40 mm matchsticks</div>
+      <div class="cut-use">Long thin strips. Squaring off the vegetable first is what makes them uniform. Garnish, quick-cooking preparations.</div>
+    </div>
+  </div>
+
+  <div class="cut-card">
+    <div class="cut-viz"><svg viewBox="0 0 74 74" width="74" height="74" role="img"><rect x="0" y="0" width="74" height="74" fill="#1B1210" stroke="#4A342C" rx="4"/><rect x="7" y="4" width="11" height="66" fill="#C2503B" rx="1.5"/><rect x="25" y="4" width="11" height="66" fill="#C2503B" rx="1.5"/><rect x="43" y="4" width="11" height="66" fill="#C2503B" rx="1.5"/><rect x="61" y="4" width="11" height="66" fill="#C2503B" rx="1.5"/></svg></div>
+    <div class="cut-info">
+      <div class="cut-name">Jardinière</div>
+      <div class="cut-dim">3 mm × 25 mm batons</div>
+      <div class="cut-use">Short batons sized to sit neatly on a soup spoon — the reason it exists.</div>
+    </div>
+  </div>
+
+  <div class="cut-card">
+    <div class="cut-viz"><svg viewBox="0 0 74 74" width="74" height="74" role="img"><rect x="0" y="0" width="74" height="74" fill="#1B1210" stroke="#4A342C" rx="4"/><polygon points="8,10 40,6 46,34 14,42" fill="#E3A93C"/><polygon points="46,38 70,44 64,68 40,64" fill="#E3A93C" opacity="0.85"/><polygon points="6,48 32,50 28,70 8,68" fill="#E3A93C" opacity="0.7"/></svg></div>
+    <div class="cut-info">
+      <div class="cut-name">Mirepoix</div>
+      <div class="cut-dim">Rough ~1–2 cm chunks</div>
+      <div class="cut-use">Deliberately coarse. It flavors espagnole and stocks and then gets strained out, so precision would be wasted effort here.</div>
+    </div>
+  </div>
+
+
+  <p class="scale-note">All tiles = 20 mm × 20 mm at identical scale</p>
+
+  <div class="cut-card">
+    <div class="cut-info">
+      <div class="cut-name">Practice order</div>
+      <div class="cut-use" style="margin-top:6px">Square off the vegetable → slice into even planks → stack and cut into batons → rotate a quarter turn and dice. Julienne and brunoise are the same motion, just stopped at different points. Master that one sequence and four of these five come with it.</div>
+      <div class="vid-row" style="margin-top:12px">
+        <a class="vid" href="https://www.youtube.com/@FrenchCookingAcademy/search?query=knife%20skills" target="_blank" rel="noopener"><span class="play"></span><span class="vlabel">Knife skills lessons<span class="vsub">channel search</span></span></a>
+        <a class="vid" href="https://thefrenchcookingacademy.wordpress.com/2015/08/03/french-vegetable-cuts/" target="_blank" rel="noopener"><span class="play"></span><span class="vlabel">French Vegetable Cuts<span class="vsub">written guide</span></span></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="channel-box">
+    <div class="cb-eyebrow">One channel, contiguous</div>
+    <h3>French Cooking Academy</h3>
+    <p>Stéphane Nguyen, 850k+ subscribers. Structured the same way this guide is — knife skills and vegetable cuts first, then stocks, then mother sauces, then full dishes. One teacher, one progression, no jumping between channels with contradictory methods.</p>
+    <a class="main-link" href="https://www.youtube.com/@FrenchCookingAcademy" target="_blank" rel="noopener">Open the channel →</a>
+  </div>
+
+  <div class="glossary">
+    <h3>Technique Glossary</h3>
+    <div class="g-item"><b>ROUX</b> — <span>fat + flour cooked together, the thickening base for four of the five mothers. Color (white → blonde → brown) depends on cook time and determines flavor and thickening power.</span></div>
+    <div class="g-item"><b>EMULSION</b> — <span>fat dispersed into tiny droplets suspended in a liquid, held together by egg yolk lecithin. Hollandaise's method, not a roux.</span></div>
+    <div class="g-item"><b>REDUCTION</b> — <span>simmering a liquid uncovered to evaporate water and concentrate flavor — how demi-glace and béarnaise's vinegar base are built.</span></div>
+    <div class="g-item"><b>MIREPOIX</b> — <span>diced onion, carrot, and celery — the aromatic backbone under espagnole and tomate.</span></div>
+    <div class="g-item"><b>ONION PIQUÉ</b> — <span>an onion studded with a clove and tucked with a bay leaf, simmered in béchamel for background flavor, then discarded.</span></div>
+  </div>
+
+  <div class="footer-note">Master hollandaise and béarnaise, bordelaise, and mousseline all become one ingredient swap away.</div>
+
+</div>
+</body>
 </html>

@@ -1,74 +1,202 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#14100E" />
-    <title>Korean Ground Beef Bowls — The Recipe Hub</title>
-    <style>
-      :root {
-        --bg: #14100e;
-        --panel: #1f1917;
-        --line: #3d322e;
-        --cream: #f2eae2;
-        --dim: #a99c93;
-        --red: #c8452f;
-        --gold: #C8452F;
-      }
-      * { box-sizing: border-box; }
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--cream);
-        font-family: -apple-system, system-ui, sans-serif;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        padding: 24px;
-      }
-      main {
-        max-width: 440px;
-        text-align: center;
-        background: var(--panel);
-        border: 1px solid var(--line);
-        border-top: 3px solid var(--gold);
-        border-radius: 10px;
-        padding: 32px 28px;
-      }
-      .icon {
-        width: 44px;
-        height: 44px;
-        margin: 0 auto 16px;
-        border-radius: 8px;
-        background: var(--gold);
-        color: var(--bg);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: 700;
-        font-size: 18px;
-      }
-      h1 { font-size: 19px; margin: 0 0 8px; }
-      p { color: var(--dim); line-height: 1.6; font-size: 14px; margin: 0 0 20px; }
-      .note {
-        font-size: 11px;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-        color: var(--red);
-        margin-bottom: 20px;
-      }
-      a { color: var(--gold); text-decoration: none; font-size: 13px; }
-      a:hover { text-decoration: underline; }
-    </style>
-  </head>
-  <body>
-    <main>
-      <div class="icon">K</div>
-      <div class="note">Guide pending</div>
-      <h1>Korean Ground Beef Bowls</h1>
-      <p>Full smart card — pantry check, scaling table, your gochujang version. This standalone guide hasn't been added to the repo yet — drop the real korean-beef-bowls.html into /public and it replaces this placeholder, no code changes needed.</p>
-      <a href="./index.html">← Back to the Recipe Hub</a>
-    </main>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Korean Ground Beef Bowls</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #14100E;
+    --panel: #1F1917;
+    --panel2: #2A2220;
+    --line: #3D322E;
+    --cream: #F2EAE2;
+    --dim: #A99C93;
+    --red: #C8452F;
+    --gold: #E0A33E;
+    --green: #7BA05B;
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--cream); font-family:'Inter',sans-serif; padding-bottom:70px; }
+  .wrap { max-width:660px; margin:0 auto; padding:32px 18px 0; }
+
+  header { margin-bottom:22px; }
+  .eyebrow { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--red); margin-bottom:10px; }
+  h1 { font-family:'Bebas Neue',sans-serif; font-size:52px; line-height:.95; margin:0 0 12px; letter-spacing:.01em; }
+  .sub { font-size:14.5px; color:var(--dim); line-height:1.6; }
+  .src { font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--dim); opacity:.7; margin-top:10px; }
+
+  .statbar { display:flex; gap:8px; flex-wrap:wrap; margin:18px 0 0; }
+  .stat { background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:9px 13px; font-family:'JetBrains Mono',monospace; font-size:10px; color:var(--dim); letter-spacing:.05em; }
+  .stat b { display:block; font-family:'Inter',sans-serif; font-size:15px; color:var(--cream); font-weight:600; margin-top:3px; letter-spacing:0; }
+  .stat.hot b { color:var(--gold); }
+
+  .label { font-family:'JetBrains Mono',monospace; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--red); margin:38px 0 14px; display:flex; align-items:center; gap:10px; }
+  .label::after { content:""; flex:1; height:1px; background:var(--line); }
+
+  .verdict { background:linear-gradient(135deg,#24312A,#1C2620); border:1px solid var(--green); border-radius:10px; padding:18px 20px; }
+  .verdict h3 { font-family:'Bebas Neue',sans-serif; font-size:24px; margin:0 0 8px; color:var(--green); letter-spacing:.02em; }
+  .verdict p { font-size:13.5px; line-height:1.7; color:var(--cream); margin:0 0 10px; }
+  .verdict p:last-child { margin-bottom:0; }
+  .verdict b { color:var(--gold); }
+
+  .shoplist { list-style:none; padding:0; margin:0; }
+  .shoplist li { display:flex; align-items:flex-start; gap:11px; padding:10px 0; border-bottom:1px solid rgba(61,50,46,.6); font-size:14px; line-height:1.45; }
+  .shoplist li:last-child { border-bottom:none; }
+  .badge { font-family:'JetBrains Mono',monospace; font-size:8.5px; letter-spacing:.06em; padding:3px 7px; border-radius:3px; flex-shrink:0; margin-top:2px; text-transform:uppercase; font-weight:500; }
+  .badge.have { background:rgba(123,160,91,.18); color:var(--green); border:1px solid rgba(123,160,91,.4); }
+  .badge.cart { background:rgba(224,163,62,.15); color:var(--gold); border:1px solid rgba(224,163,62,.4); }
+  .badge.buy { background:rgba(200,69,47,.15); color:var(--red); border:1px solid rgba(200,69,47,.45); }
+  .item-name { flex:1; }
+  .amt { font-family:'JetBrains Mono',monospace; font-size:12px; color:var(--gold); font-weight:500; }
+  .where { display:block; font-size:11.5px; color:var(--dim); margin-top:2px; }
+
+  ol.method { padding-left:20px; margin:0; font-size:14.5px; line-height:1.75; }
+  ol.method li { margin-bottom:11px; padding-left:3px; }
+  ol.method b { color:var(--gold); font-weight:600; }
+
+  table.scale { width:100%; border-collapse:collapse; font-size:13px; }
+  table.scale th { font-family:'JetBrains Mono',monospace; font-size:9.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--red); text-align:left; padding:0 10px 9px 0; border-bottom:1px solid var(--line); font-weight:500; }
+  table.scale td { padding:9px 10px 9px 0; border-bottom:1px solid rgba(61,50,46,.5); color:var(--cream); }
+  table.scale td:first-child { color:var(--dim); }
+  table.scale tr:last-child td { border-bottom:none; }
+  table.scale .num { font-family:'JetBrains Mono',monospace; font-size:12.5px; }
+
+  .upgrade { background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:8px; padding:15px 17px; margin-bottom:11px; }
+  .up-title { font-weight:600; font-size:14.5px; margin-bottom:5px; }
+  .up-title .tag { font-family:'JetBrains Mono',monospace; font-size:8.5px; background:var(--panel2); border:1px solid var(--line); color:var(--dim); padding:3px 6px; border-radius:3px; margin-left:8px; text-transform:uppercase; letter-spacing:.06em; vertical-align:middle; }
+  .up-body { font-size:13px; line-height:1.65; color:var(--dim); }
+  .up-body b { color:var(--cream); font-weight:500; }
+
+  .storage { background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:18px 20px; }
+  .storage-row { display:flex; gap:14px; padding:10px 0; border-bottom:1px solid rgba(61,50,46,.5); font-size:13.5px; line-height:1.6; }
+  .storage-row:last-child { border-bottom:none; }
+  .storage-row .k { font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:.08em; text-transform:uppercase; color:var(--gold); flex-shrink:0; width:80px; padding-top:3px; }
+  .storage-row .v { flex:1; color:var(--cream); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Meal Prep · Returning to Rotation</div>
+  <h1>Korean Ground<br>Beef Bowls</h1>
+  <p class="sub">Twenty minutes, one skillet, four servings. Brown sugar, soy, sesame, and ginger over rice — the whole thing is a browning step and a whisked sauce.</p>
+  <div class="src">Source: The Recipe Critic (Alyssa Rivers) · 4.89 from 735 votes</div>
+</header>
+
+<div class="statbar">
+  <div class="stat">Prep<b>5 min</b></div>
+  <div class="stat">Cook<b>15 min</b></div>
+  <div class="stat hot">Total<b>20 min</b></div>
+  <div class="stat">Serves<b>4</b></div>
+  <div class="stat">Per serving<b>238 cal · 25g protein</b></div>
+</div>
+
+<div class="label">Pantry Check</div>
+
+<div class="verdict">
+  <h3>Standing Kit vs. Per-Batch</h3>
+  <p>The sauce is built entirely from <b>shelf-stable staples</b> — soy, sesame oil, ginger, red pepper, black pepper, brown sugar. Stock those once and they cover this recipe indefinitely.</p>
+  <p>What you actually shop for each time: <b>ground beef and fresh aromatics.</b> Everything else is already on the shelf. That's what makes this viable as a repeat meal-prep dish rather than a project.</p>
+</div>
+
+<div class="label">Ingredients</div>
+
+<ul class="shoplist">
+  <li><span class="badge buy">Per batch</span><span class="item-name">Lean ground beef, 90% <span class="amt">1 lb</span><span class="where">The only real cost driver — freezes well, buy ahead</span></span></li>
+  <li><span class="badge cart">Rotating</span><span class="item-name">Garlic, minced <span class="amt">3 cloves</span><span class="where">Keeps for weeks — check before cooking</span></span></li>
+  <li><span class="badge cart">Rotating</span><span class="item-name">Fresh ginger <span class="amt">½-inch matchsticks</span><span class="where">Freezes whole; grate or slice from frozen</span></span></li>
+  <li><span class="badge cart">Rotating</span><span class="item-name">Green onions, sliced <span class="amt">garnish</span><span class="where">Perishable — regrows from root ends in water</span></span></li>
+  <li><span class="badge have">Staple</span><span class="item-name">Reduced-sodium soy sauce or tamari <span class="amt">3 Tbsp–¼ cup</span><span class="where">Reduced-sodium is required, not optional</span></span></li>
+  <li><span class="badge have">Staple</span><span class="item-name">Gochujang <span class="amt">1–2 Tbsp</span><span class="where">Keeps months refrigerated after opening</span></span></li>
+  <li><span class="badge have">Staple</span><span class="item-name">Toasted sesame oil <span class="amt">2 tsp</span></span></li>
+  <li><span class="badge have">Staple</span><span class="item-name">Brown sugar, packed <span class="amt">¼ cup</span><span class="where">Cut back if running gochujang — it's already sweet</span></span></li>
+  <li><span class="badge have">Staple</span><span class="item-name">Gochugaru or crushed red pepper <span class="amt">¼ tsp</span></span></li>
+  <li><span class="badge have">Staple</span><span class="item-name">Black pepper <span class="amt">¼ tsp</span></span></li>
+  <li><span class="badge have">Staple</span><span class="item-name">White or brown rice <span class="amt">2 cups cooked</span><span class="where">Bulk buy — cook a batch for the week</span></span></li>
+  <li><span class="badge have">Staple</span><span class="item-name">Sesame seeds <span class="amt">garnish</span><span class="where">Furikake substitutes cleanly</span></span></li>
+</ul>
+
+<div class="label">Method</div>
+
+<ol class="method">
+  <li>Brown the ground beef and minced garlic together in a large skillet over medium heat, breaking the meat into crumbles as it cooks. Go until no pink remains, then <b>drain the grease</b>.</li>
+  <li>While that cooks, whisk the sauce in a small bowl: brown sugar, soy sauce, sesame oil, ginger, red pepper flakes, and black pepper.</li>
+  <li>Pour the sauce over the beef and let it simmer a minute or two until it tightens up and coats.</li>
+  <li>Serve over hot rice. Green onions and sesame seeds on top.</li>
+</ol>
+
+<div class="label">Meal Prep Scaling</div>
+
+<table class="scale">
+  <tr>
+    <th>Ingredient</th><th>1× (4 svg)</th><th>2× (8 svg)</th><th>3× (12 svg)</th>
+  </tr>
+  <tr><td>Ground beef</td><td class="num">1 lb</td><td class="num">2 lb</td><td class="num">3 lb</td></tr>
+  <tr><td>Garlic cloves</td><td class="num">3</td><td class="num">6</td><td class="num">9</td></tr>
+  <tr><td>Brown sugar</td><td class="num">1/4 cup</td><td class="num">1/2 cup</td><td class="num">3/4 cup</td></tr>
+  <tr><td>Soy sauce</td><td class="num">1/4 cup</td><td class="num">1/2 cup</td><td class="num">3/4 cup</td></tr>
+  <tr><td>Sesame oil</td><td class="num">2 tsp</td><td class="num">4 tsp</td><td class="num">2 Tbsp</td></tr>
+  <tr><td>Ground ginger</td><td class="num">1/4 tsp</td><td class="num">1/2 tsp</td><td class="num">3/4 tsp</td></tr>
+  <tr><td>Red pepper flakes</td><td class="num">1/4 tsp</td><td class="num">1/2 tsp</td><td class="num">3/4 tsp</td></tr>
+  <tr><td>Black pepper</td><td class="num">1/4 tsp</td><td class="num">1/2 tsp</td><td class="num">3/4 tsp</td></tr>
+  <tr><td>Cooked rice</td><td class="num">2 cups</td><td class="num">4 cups</td><td class="num">6 cups</td></tr>
+</table>
+
+<div class="label">Your Version</div>
+
+<div class="verdict" style="background:linear-gradient(135deg,#33261F,#241B17); border-color:var(--gold);">
+  <h3 style="color:var(--gold);">Gochujang Base, Less Soy</h3>
+  <p>The way you used to make it, and the better version: <b>swap in gochujang and cut the soy sauce back.</b> Gochujang carries its own salt and sugar, so running full soy on top of full brown sugar stacks salty on sweet and flattens everything out.</p>
+  <p><b>Starting point:</b> 1–2 Tbsp gochujang, soy reduced from 1/4 cup to about 3 Tbsp. Taste before it finishes simmering — gochujang brands vary a lot in heat and salt.</p>
+  <p><b>Use tamari over standard soy.</b> Smoother and less sharp, which lets the sesame and ginger actually come through instead of getting buried. Reduced-sodium is the other must — full-strength soy makes this too salty and too sweet at the same time.</p>
+  <p><b>Fresh ginger, cut into ½-inch matchsticks — not grated, not powdered.</b> Matchsticks stay intact through the simmer and give you distinct bites of ginger throughout the bowl rather than a flat background note. Fresh ginger is already in the Wegmans cart.</p>
+</div>
+
+<div class="label">Upgrades From The Comments</div>
+
+<div class="upgrade">
+  <div class="up-title">Double the sauce <span class="tag">most common note</span></div>
+  <div class="up-body">Multiple people run a double batch of sauce against a single pound of beef for more flavor and better rice coverage. Worth trying on your first run back.</div>
+</div>
+
+<div class="upgrade">
+  <div class="up-title">Gochugaru alongside the red pepper flakes <span class="tag">you already own this</span></div>
+  <div class="up-body">One reviewer used <b>both</b> Korean pepper flakes and standard crushed red pepper. Given you have gochugaru sitting upstairs, this is a free upgrade that pushes it more authentically Korean.</div>
+</div>
+
+<div class="upgrade">
+  <div class="up-title">Fresh ginger instead of dried <span class="tag">in your cart</span></div>
+  <div class="up-body">Grated fresh ginger in place of the 1/4 tsp ground. You've got fresh ginger coming in the Wegmans order — noticeably brighter than the jar.</div>
+</div>
+
+<div class="upgrade">
+  <div class="up-title">Cornstarch slurry to thicken</div>
+  <div class="up-body">About 1/2 tsp cornstarch dissolved in water, stirred in at the end. Tightens the sauce so it clings to the beef instead of running into the rice.</div>
+</div>
+
+<div class="upgrade">
+  <div class="up-title">Broccoli in with the sauce <span class="tag">solves your greens</span></div>
+  <div class="up-body">Blanched or frozen broccoli added at the sauce stage turns this into a complete one-bowl meal. You keep frozen broccoli stocked constantly — microwave it and fold it in.</div>
+</div>
+
+<div class="upgrade">
+  <div class="up-title">Kimchi on the side, or romaine wraps</div>
+  <div class="up-body">Kimchi's tang cuts the sweet-savory sauce well. Others skip the rice entirely and wrap the beef in romaine leaves for a lower-carb version — less relevant while bulking, but useful to know.</div>
+</div>
+
+<div class="label">Storage</div>
+
+<div class="storage">
+  <div class="storage-row"><div class="k">Fridge</div><div class="v">3–4 days in airtight containers. Store beef and rice together or separate — both reheat fine.</div></div>
+  <div class="storage-row"><div class="k">Freezer</div><div class="v">The beef mixture freezes well for 2–3 months. Portion flat in bags or containers so it thaws fast.</div></div>
+  <div class="storage-row"><div class="k">Reheat</div><div class="v">Microwave straight from the fridge, covered, stirring once. Splash of water if the rice has dried out.</div></div>
+  <div class="storage-row"><div class="k">Prep note</div><div class="v">Cook the rice in a separate batch — a 3× run needs 6 cups cooked, which is more than one Anyday batch. Rice holds fine in the fridge for the week.</div></div>
+</div>
+
+</div>
+</body>
 </html>
