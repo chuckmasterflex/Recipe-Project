@@ -6,7 +6,7 @@
 
 :root {
   /* surfaces */
-  --bg:     #14100E;
+  --bg:     #15331F;  /* deep forest green, after the Cooking at Home cover */
   --panel:  #1F1917;
   --panel2: #2A2220;
   --line:   #3D322E;
@@ -16,7 +16,7 @@
   --dim:    #A99C93;
 
   /* accents */
-  --red:    #C8452F;  /* section labels */
+  --red:    #E8724C;  /* section labels — brightened from C8452F to stay readable on the green bg; only used here and by .eyebrow */
   --gold:   #E0A33E;  /* active state, primary accent */
   --green:  #7BA05B;  /* positive / confirmed */
   --blue:   #5B8CA9;
