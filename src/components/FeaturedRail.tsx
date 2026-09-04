@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
 import type { Category, Recipe } from '../types'
-import { slug } from '../lib/slug'
+import { openCardInList } from '../lib/openCard'
 
 export interface FeaturedItem {
   recipe: Recipe
@@ -14,14 +14,6 @@ export interface FeaturedItem {
  * data source.
  */
 export default function FeaturedRail({ items }: { items: FeaturedItem[] }) {
-  function openInList(name: string) {
-    const card = document.getElementById(`recipe-${slug(name)}`)
-    if (!card) return
-    const head = card.querySelector<HTMLButtonElement>('.rec__head')
-    if (head?.getAttribute('aria-expanded') === 'false') head.click()
-    card.scrollIntoView({ behavior: 'smooth', block: 'center' })
-  }
-
   return (
     <div className="rail">
       {items.map(({ recipe, category }) => (
@@ -30,7 +22,7 @@ export default function FeaturedRail({ items }: { items: FeaturedItem[] }) {
           type="button"
           className="rail__card"
           style={{ '--accent': category.c } as CSSProperties}
-          onClick={() => openInList(recipe.n)}
+          onClick={() => openCardInList(recipe.n)}
         >
           <span className="rail__cat">{category.n}</span>
           <span className="rail__name">{recipe.n}</span>

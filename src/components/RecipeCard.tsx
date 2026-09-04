@@ -11,7 +11,17 @@ import { slug } from '../lib/slug'
  *   - `i` + `m`      → ingredients list + numbered method
  * Never both.
  */
-export default function RecipeCard({ recipe, category }: { recipe: Recipe; category: Category }) {
+export default function RecipeCard({
+  recipe,
+  category,
+  favorite,
+  onToggleFavorite,
+}: {
+  recipe: Recipe
+  category: Category
+  favorite: boolean
+  onToggleFavorite: (name: string) => void
+}) {
   const [open, setOpen] = useState(false)
   const accent = category.c
 
@@ -22,20 +32,36 @@ export default function RecipeCard({ recipe, category }: { recipe: Recipe; categ
       data-cat={recipe.c}
       style={{ '--accent': accent } as CSSProperties}
     >
-      <button className="rec__head" onClick={() => setOpen((o) => !o)} aria-expanded={open}>
-        <span className="rec__left">
-          <span className="rec__name">{recipe.n}</span>
-          <span className="rec__tags">
-            <span className="tag">{category.n}</span>
-            {(recipe.t ?? []).map((t) => (
-              <span key={t} className="tag tag--accent">
-                {t}
-              </span>
-            ))}
+      <div className="rec__head">
+        <button
+          type="button"
+          className="rec__fav"
+          aria-pressed={favorite}
+          aria-label={favorite ? `Remove ${recipe.n} from favorites` : `Add ${recipe.n} to favorites`}
+          onClick={() => onToggleFavorite(recipe.n)}
+        >
+          {favorite ? '★' : '☆'}
+        </button>
+        <button
+          type="button"
+          className="rec__toggle"
+          onClick={() => setOpen((o) => !o)}
+          aria-expanded={open}
+        >
+          <span className="rec__left">
+            <span className="rec__name">{recipe.n}</span>
+            <span className="rec__tags">
+              <span className="tag">{category.n}</span>
+              {(recipe.t ?? []).map((t) => (
+                <span key={t} className="tag tag--accent">
+                  {t}
+                </span>
+              ))}
+            </span>
           </span>
-        </span>
-        <span className={`rec__chev${open ? ' is-open' : ''}`}>+</span>
-      </button>
+          <span className={`rec__chev${open ? ' is-open' : ''}`}>+</span>
+        </button>
+      </div>
 
       {open && (
         <div className="rec__body">

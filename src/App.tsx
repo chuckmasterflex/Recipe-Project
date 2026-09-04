@@ -2,9 +2,13 @@ import { useMemo, useState, type CSSProperties } from 'react'
 import rawData from './data/recipes.json'
 import RecipeCard from './components/RecipeCard'
 import FeaturedRail, { type FeaturedItem } from './components/FeaturedRail'
+import { useFavorites } from './lib/favorites'
+import { openCardInList } from './lib/openCard'
 import type { Recipe, RecipeData } from './types'
 import './styles/tokens.css'
 import './styles/app.css'
+
+const FAVORITES_FILTER = 'favorites'
 
 const data = rawData as RecipeData
 const { recipes, categories, guides } = data
@@ -47,19 +51,30 @@ const SORTED = [...INDEXED].sort((a, b) => ORDER[a.c] - ORDER[b.c] || a.n.locale
 export default function App() {
   const [cat, setCat] = useState('all')
   const [term, setTerm] = useState('')
+  const { favorites, toggle: toggleFavorite } = useFavorites()
 
   const hits = useMemo(() => {
     const t = term.trim().toLowerCase()
-    return SORTED.filter((r) => (cat === 'all' || r.c === cat) && (!t || r._hay.includes(t)))
-  }, [cat, term])
+    return SORTED.filter((r) => {
+      const inScope =
+        cat === 'all' ? true : cat === FAVORITES_FILTER ? favorites.has(r.n) : r.c === cat
+      return inScope && (!t || r._hay.includes(t))
+    })
+  }, [cat, term, favorites])
 
   const counts = useMemo(() => {
-    const c: Record<string, number> = { all: recipes.length }
+    const c: Record<string, number> = { all: recipes.length, [FAVORITES_FILTER]: favorites.size }
     CAT_KEYS.forEach((k) => {
       c[k] = recipes.filter((r) => r.c === k).length
     })
     return c
-  }, [])
+  }, [favorites])
+
+  function surpriseMe() {
+    if (hits.length === 0) return
+    const pick = hits[Math.floor(Math.random() * hits.length)]
+    openCardInList(pick.n)
+  }
 
   return (
     <div className="wrap">
@@ -74,7 +89,7 @@ export default function App() {
           Everything in one place. Filter by type, search by ingredient or name, tap any recipe to
           open it. Standalone deep-dive guides at the bottom.
         </p>
-        <div className="stats">
+        <div className="stats no-print">
           <Stat
             label="Recipes"
             value={recipes.filter((r) => !['sauce', 'onepot'].includes(r.c)).length}
@@ -85,19 +100,32 @@ export default function App() {
         </div>
       </header>
 
-      <div className="section-label">Chef's Picks</div>
-      <FeaturedRail items={FEATURED} />
+      <div className="no-print">
+        <div className="section-label">Chef's Picks</div>
+        <FeaturedRail items={FEATURED} />
+      </div>
 
-      <input
-        className="search"
-        type="search"
-        value={term}
-        onChange={(e) => setTerm(e.target.value)}
-        placeholder="Search recipes, ingredients, methods…"
-      />
+      <div className="search-row no-print">
+        <input
+          className="search"
+          type="search"
+          value={term}
+          onChange={(e) => setTerm(e.target.value)}
+          placeholder="Search recipes, ingredients, methods…"
+        />
+        <button type="button" className="surprise" onClick={surpriseMe} disabled={hits.length === 0}>
+          Surprise me
+        </button>
+      </div>
 
-      <div className="chips">
+      <div className="chips no-print">
         <Chip on={cat === 'all'} onClick={() => setCat('all')} label="All" n={counts.all} />
+        <Chip
+          on={cat === FAVORITES_FILTER}
+          onClick={() => setCat(FAVORITES_FILTER)}
+          label="★ Favorites"
+          n={counts[FAVORITES_FILTER]}
+        />
         {CAT_KEYS.map((k) => (
           <Chip
             key={k}
@@ -105,11 +133,12 @@ export default function App() {
             onClick={() => setCat(k)}
             label={categories[k].n}
             n={counts[k]}
+            accent={categories[k].c}
           />
         ))}
       </div>
 
-      <div className="rcount">
+      <div className="rcount no-print">
         {hits.length === recipes.length
           ? `${recipes.length} entries`
           : `${hits.length} of ${recipes.length} entries`}
@@ -117,7 +146,15 @@ export default function App() {
 
       <div>
         {hits.length ? (
-          hits.map((r) => <RecipeCard key={r.n} recipe={r} category={categories[r.c]} />)
+          hits.map((r) => (
+            <RecipeCard
+              key={r.n}
+              recipe={r}
+              category={categories[r.c]}
+              favorite={favorites.has(r.n)}
+              onToggleFavorite={toggleFavorite}
+            />
+          ))
         ) : (
           <div className="empty">
             Nothing matches that.
@@ -127,25 +164,27 @@ export default function App() {
         )}
       </div>
 
-      <div className="section-label">Deep-Dive Guides</div>
-      {guides.map((g) => (
-        // Guides live in /public as standalone HTML — plain anchors, not routes.
-        // import.meta.env.BASE_URL keeps them correct under the GH Pages subpath.
-        <a
-          key={g.f}
-          className="guide"
-          href={`${import.meta.env.BASE_URL}${g.f}`}
-          style={{ '--accent': g.c } as CSSProperties}
-        >
-          <span className="guide__icon" style={{ background: g.c }}>
-            {g.i}
-          </span>
-          <span>
-            <span className="guide__title">{g.t}</span>
-            <span className="guide__desc">{g.d}</span>
-          </span>
-        </a>
-      ))}
+      <div className="no-print">
+        <div className="section-label">Deep-Dive Guides</div>
+        {guides.map((g) => (
+          // Guides live in /public as standalone HTML — plain anchors, not routes.
+          // import.meta.env.BASE_URL keeps them correct under the GH Pages subpath.
+          <a
+            key={g.f}
+            className="guide"
+            href={`${import.meta.env.BASE_URL}${g.f}`}
+            style={{ '--accent': g.c } as CSSProperties}
+          >
+            <span className="guide__icon" style={{ background: g.c }}>
+              {g.i}
+            </span>
+            <span>
+              <span className="guide__title">{g.t}</span>
+              <span className="guide__desc">{g.d}</span>
+            </span>
+          </a>
+        ))}
+      </div>
     </div>
   )
 }
@@ -164,14 +203,21 @@ function Chip({
   onClick,
   label,
   n,
+  accent,
 }: {
   on: boolean
   onClick: () => void
   label: string
   n: number
+  accent?: string
 }) {
   return (
-    <button className={`chip${on ? ' is-on' : ''}`} onClick={onClick}>
+    <button
+      type="button"
+      className={`chip${on ? ' is-on' : ''}`}
+      style={accent ? ({ '--accent': accent } as CSSProperties) : undefined}
+      onClick={onClick}
+    >
       {label} <span className="chip__n">{n}</span>
     </button>
   )

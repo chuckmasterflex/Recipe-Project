@@ -20,8 +20,9 @@
   color: var(--gold); font-weight: 700; margin-top: 2px; letter-spacing: 0;
 }
 
+.search-row { display: flex; gap: 8px; margin: 24px 0 12px; }
 .search {
-  width: 100%; margin: 24px 0 12px;
+  flex: 1; min-width: 0;
   background: var(--panel); border: 1px solid var(--line);
   border-radius: var(--radius); padding: 13px 15px;
   color: var(--cream); font-family: var(--font-body); font-size: 15px;
@@ -30,15 +31,26 @@
 .search:focus { border-color: var(--gold); }
 .search::placeholder { color: var(--dim); }
 
+.surprise {
+  flex: 0 0 auto;
+  background: var(--gold); border: 1px solid var(--gold); color: var(--bg);
+  border-radius: var(--radius); padding: 13px 16px;
+  font-family: var(--font-body); font-size: 13.5px; font-weight: 600;
+  cursor: pointer; white-space: nowrap;
+}
+.surprise:hover { filter: brightness(1.08); }
+.surprise:disabled { opacity: .4; cursor: not-allowed; }
+
 .chips { display: flex; gap: 7px; flex-wrap: wrap; }
 .chip {
-  background: var(--panel); border: 1px solid var(--line); color: var(--dim);
+  background: var(--panel); border: 1px solid var(--accent, var(--line));
+  color: var(--accent, var(--dim));
   border-radius: 100px; padding: 8px 14px; font-size: 12.5px;
   font-family: var(--font-body); cursor: pointer;
-  transition: border-color .15s, color .15s;
+  transition: border-color .15s, color .15s, background .15s;
 }
-.chip:hover { border-color: var(--dim); color: var(--cream); }
-.chip.is-on { background: var(--gold); border-color: var(--gold); color: var(--bg); font-weight: 600; }
+.chip:hover { border-color: var(--accent, var(--dim)); color: var(--cream); }
+.chip.is-on { background: var(--accent, var(--gold)); border-color: var(--accent, var(--gold)); color: var(--bg); font-weight: 600; }
 .chip__n { opacity: .6; }
 
 .rcount {
@@ -85,8 +97,18 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
 }
 .rec__head {
-  width: 100%; background: none; border: none; cursor: pointer;
-  padding: 13px 15px; display: flex; align-items: center;
+  width: 100%; display: flex; align-items: center; gap: 2px;
+  padding: 13px 15px;
+}
+.rec__fav {
+  flex: 0 0 auto; background: none; border: none; cursor: pointer;
+  font-size: 17px; line-height: 1; padding: 0 8px 0 0;
+  color: var(--accent, var(--gold));
+}
+.rec__fav[aria-pressed="false"] { color: var(--dim); }
+.rec__toggle {
+  flex: 1; min-width: 0; background: none; border: none; cursor: pointer;
+  padding: 0; display: flex; align-items: center;
   justify-content: space-between; gap: 11px; text-align: left; color: inherit;
   font-family: inherit;
 }
@@ -145,3 +167,29 @@
 }
 .guide__title { display: block; font-weight: 600; font-size: 14.5px; margin-bottom: 2px; }
 .guide__desc  { display: block; font-size: 12px; color: var(--dim); line-height: 1.5; }
+
+/* ---- print ----
+   Prints whatever's currently on screen: filter/search down to what you
+   want, open the cards you need, then print. Chrome (rail, search, chips,
+   guides) is dropped; cards still collapsed are dropped too, since there's
+   nothing on them worth a page. */
+@media print {
+  .no-print { display: none !important; }
+  .rec:not(:has(.rec__body)) { display: none; }
+
+  body { background: #fff; color: #000; padding-bottom: 0; }
+  .wrap { max-width: none; }
+  .eyebrow, .rec__fav, .rec__chev { display: none; }
+  .title { color: #000; }
+  .sub { color: #333; }
+
+  .rec {
+    background: none; box-shadow: none; border: 1px solid #ccc;
+    border-left: 3px solid var(--accent, #999); break-inside: avoid;
+  }
+  .rec__name { color: #000; }
+  .rec__toggle { cursor: default; }
+  .rec__bh { color: #000; }
+  .rec__note { color: #555; }
+  .tag { background: none; border: 1px solid #ccc; color: #555; }
+}
